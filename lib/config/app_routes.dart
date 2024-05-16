@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tmdbapp/home_screen.dart';
+import 'package:tmdbapp/features/home/screens/home_screen.dart';
 
 class AppRoutes {
   static final router = GoRouter(
