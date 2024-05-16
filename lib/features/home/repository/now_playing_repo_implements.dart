@@ -1,4 +1,3 @@
-
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdbapp/config/config.dart';
 import 'package:tmdbapp/core/dio_service.dart';
