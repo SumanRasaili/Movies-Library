@@ -24,12 +24,11 @@ class MovieDetailsScreen extends ConsumerWidget {
     final prov = ref.watch(getAllMovieDetailsProvider(movieId: movieId));
     return Scaffold(
         body: CustomScrollView(
-      // physics: const NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       slivers: [
         SliverList(
             delegate: SliverChildListDelegate([
           prov.when(data: (movieData) {
-            print("Movie detail is ${movieData.title}");
             return SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Stack(
@@ -112,8 +111,8 @@ class MovieDetailsScreen extends ConsumerWidget {
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(15),
                               topRight: Radius.circular(15))),
-                      // width: constraints.maxWidth,
-                      height: MediaQuery.of(context).size.height,
+
+                      // height: MediaQuery.of(context).size.height,
                       child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -249,6 +248,7 @@ class Production extends StatelessWidget {
         SizedBox(
           height: 80,
           child: ListView(
+            // physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             children: [
               for (var each in productionCompanies)

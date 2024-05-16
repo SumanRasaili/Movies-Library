@@ -7,9 +7,6 @@ part 'caste_details_provider.g.dart';
 @riverpod
 Future<CasteDetailsModel> getCasteDetails(GetCasteDetailsRef ref,
     {required String movieId}) async {
-  var d =
-      await ref.read(casteRepoImplProvider).getCasteDetails(movieId: movieId);
-  print("c===== ${d.cast}");
   return await ref
       .read(casteRepoImplProvider)
       .getCasteDetails(movieId: movieId);

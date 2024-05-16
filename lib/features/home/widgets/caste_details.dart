@@ -13,31 +13,32 @@ class CasteDetails extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final casteProv = ref.watch(getCasteDetailsProvider(movieId: movieId));
     return casteProv.when(data: (casteData) {
-      return Column(
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          const Text("Casting Crews"),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 120,
-            child: ListView.builder(
-              shrinkWrap: true,
-              // physics: const NeverScrollableScrollPhysics(),
-              itemCount: casteData.cast.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 10.0),
-                  child: CastWidget(casteData.cast[index]),
-                );
-              },
+      return SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 10,
             ),
-          ),
-        ],
+            const Text("Casting Crews"),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 120,
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: casteData.cast.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: CastWidget(casteData.cast[index]),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       );
     }, error: (error, stackTrace) {
       return Center(

@@ -46,45 +46,7 @@ class HomeScreen extends ConsumerWidget {
                       height: 15,
                     ),
                     const NowplayingWidget(),
-                    SizedBox(
-                      height: 200,
-                      width: MediaQuery.of(context).size.width,
-                      child: ListView.builder(
-                        // physics: const NeverScrollableScrollPhysics(),
-                        // shrinkWrap: true,
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return SizedBox(
-                            width: 170,
-                            child: Card(
-                                margin: const EdgeInsets.all(10),
-                                clipBehavior: Clip.hardEdge,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    CachedNetworkImage(
-                                        fit: BoxFit.cover,
-                                        height: 150,
-                                        imageUrl:
-                                            "https://h5p.org/sites/default/files/h5p/content/1209180/images/file-6113d5f8845dc.jpeg"),
-                                    const SizedBox(
-                                      width: 8,
-                                    ),
-                                    Text(
-                                      "Bad Ass",
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary),
-                                    ),
-                                  ],
-                                )),
-                          );
-                        },
-                      ),
-                    ),
+                   
                     const SizedBox(
                       height: 15,
                     ),
@@ -96,7 +58,7 @@ class HomeScreen extends ConsumerWidget {
                       height: 200,
                       width: MediaQuery.of(context).size.width,
                       child: ListView.builder(
-                        // physics: const NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         // shrinkWrap: true,
                         itemCount: 5,
                         scrollDirection: Axis.horizontal,

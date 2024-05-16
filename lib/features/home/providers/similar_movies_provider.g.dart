@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'caste_details_provider.dart';
+part of 'similar_movies_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getCasteDetailsHash() => r'ed089ee6e1176083b15c57d03c0c7be2115bcc2e';
+String _$getAllSimilarMoviesHash() =>
+    r'038eb102c6915f37d9ef829398d87e33f0d75673';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,27 +30,27 @@ class _SystemHash {
   }
 }
 
-/// See also [getCasteDetails].
-@ProviderFor(getCasteDetails)
-const getCasteDetailsProvider = GetCasteDetailsFamily();
+/// See also [getAllSimilarMovies].
+@ProviderFor(getAllSimilarMovies)
+const getAllSimilarMoviesProvider = GetAllSimilarMoviesFamily();
 
-/// See also [getCasteDetails].
-class GetCasteDetailsFamily extends Family<AsyncValue<CasteDetailsModel>> {
-  /// See also [getCasteDetails].
-  const GetCasteDetailsFamily();
+/// See also [getAllSimilarMovies].
+class GetAllSimilarMoviesFamily extends Family<AsyncValue<SimilarMovieModel>> {
+  /// See also [getAllSimilarMovies].
+  const GetAllSimilarMoviesFamily();
 
-  /// See also [getCasteDetails].
-  GetCasteDetailsProvider call({
+  /// See also [getAllSimilarMovies].
+  GetAllSimilarMoviesProvider call({
     required String movieId,
   }) {
-    return GetCasteDetailsProvider(
+    return GetAllSimilarMoviesProvider(
       movieId: movieId,
     );
   }
 
   @override
-  GetCasteDetailsProvider getProviderOverride(
-    covariant GetCasteDetailsProvider provider,
+  GetAllSimilarMoviesProvider getProviderOverride(
+    covariant GetAllSimilarMoviesProvider provider,
   ) {
     return call(
       movieId: provider.movieId,
@@ -68,33 +69,33 @@ class GetCasteDetailsFamily extends Family<AsyncValue<CasteDetailsModel>> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'getCasteDetailsProvider';
+  String? get name => r'getAllSimilarMoviesProvider';
 }
 
-/// See also [getCasteDetails].
-class GetCasteDetailsProvider
-    extends AutoDisposeFutureProvider<CasteDetailsModel> {
-  /// See also [getCasteDetails].
-  GetCasteDetailsProvider({
+/// See also [getAllSimilarMovies].
+class GetAllSimilarMoviesProvider
+    extends AutoDisposeFutureProvider<SimilarMovieModel> {
+  /// See also [getAllSimilarMovies].
+  GetAllSimilarMoviesProvider({
     required String movieId,
   }) : this._internal(
-          (ref) => getCasteDetails(
-            ref as GetCasteDetailsRef,
+          (ref) => getAllSimilarMovies(
+            ref as GetAllSimilarMoviesRef,
             movieId: movieId,
           ),
-          from: getCasteDetailsProvider,
-          name: r'getCasteDetailsProvider',
+          from: getAllSimilarMoviesProvider,
+          name: r'getAllSimilarMoviesProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$getCasteDetailsHash,
-          dependencies: GetCasteDetailsFamily._dependencies,
+                  : _$getAllSimilarMoviesHash,
+          dependencies: GetAllSimilarMoviesFamily._dependencies,
           allTransitiveDependencies:
-              GetCasteDetailsFamily._allTransitiveDependencies,
+              GetAllSimilarMoviesFamily._allTransitiveDependencies,
           movieId: movieId,
         );
 
-  GetCasteDetailsProvider._internal(
+  GetAllSimilarMoviesProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -108,12 +109,13 @@ class GetCasteDetailsProvider
 
   @override
   Override overrideWith(
-    FutureOr<CasteDetailsModel> Function(GetCasteDetailsRef provider) create,
+    FutureOr<SimilarMovieModel> Function(GetAllSimilarMoviesRef provider)
+        create,
   ) {
     return ProviderOverride(
       origin: this,
-      override: GetCasteDetailsProvider._internal(
-        (ref) => create(ref as GetCasteDetailsRef),
+      override: GetAllSimilarMoviesProvider._internal(
+        (ref) => create(ref as GetAllSimilarMoviesRef),
         from: from,
         name: null,
         dependencies: null,
@@ -125,13 +127,13 @@ class GetCasteDetailsProvider
   }
 
   @override
-  AutoDisposeFutureProviderElement<CasteDetailsModel> createElement() {
-    return _GetCasteDetailsProviderElement(this);
+  AutoDisposeFutureProviderElement<SimilarMovieModel> createElement() {
+    return _GetAllSimilarMoviesProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is GetCasteDetailsProvider && other.movieId == movieId;
+    return other is GetAllSimilarMoviesProvider && other.movieId == movieId;
   }
 
   @override
@@ -143,18 +145,19 @@ class GetCasteDetailsProvider
   }
 }
 
-mixin GetCasteDetailsRef on AutoDisposeFutureProviderRef<CasteDetailsModel> {
+mixin GetAllSimilarMoviesRef
+    on AutoDisposeFutureProviderRef<SimilarMovieModel> {
   /// The parameter `movieId` of this provider.
   String get movieId;
 }
 
-class _GetCasteDetailsProviderElement
-    extends AutoDisposeFutureProviderElement<CasteDetailsModel>
-    with GetCasteDetailsRef {
-  _GetCasteDetailsProviderElement(super.provider);
+class _GetAllSimilarMoviesProviderElement
+    extends AutoDisposeFutureProviderElement<SimilarMovieModel>
+    with GetAllSimilarMoviesRef {
+  _GetAllSimilarMoviesProviderElement(super.provider);
 
   @override
-  String get movieId => (origin as GetCasteDetailsProvider).movieId;
+  String get movieId => (origin as GetAllSimilarMoviesProvider).movieId;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
