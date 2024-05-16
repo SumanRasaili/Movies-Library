@@ -25,57 +25,57 @@ mixin _$MovieDetails {
   @JsonKey(name: "backdrop_path")
   String get backdropPath => throw _privateConstructorUsedError;
   @JsonKey(name: "belongs_to_collection")
-  BelongsToCollection get belongsToCollection =>
+  BelongsToCollection? get belongsToCollection =>
       throw _privateConstructorUsedError;
   @JsonKey(name: "budget")
-  int get budget => throw _privateConstructorUsedError;
+  int? get budget => throw _privateConstructorUsedError;
   @JsonKey(name: "genres")
-  List<Genre> get genres => throw _privateConstructorUsedError;
+  List<Genre>? get genres => throw _privateConstructorUsedError;
   @JsonKey(name: "homepage")
-  String get homepage => throw _privateConstructorUsedError;
+  String? get homepage => throw _privateConstructorUsedError;
   @JsonKey(name: "id")
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: "imdb_id")
-  String get imdbId => throw _privateConstructorUsedError;
+  String? get imdbId => throw _privateConstructorUsedError;
   @JsonKey(name: "origin_country")
-  List<String> get originCountry => throw _privateConstructorUsedError;
+  List<String>? get originCountry => throw _privateConstructorUsedError;
   @JsonKey(name: "original_language")
-  String get originalLanguage => throw _privateConstructorUsedError;
+  String? get originalLanguage => throw _privateConstructorUsedError;
   @JsonKey(name: "original_title")
-  String get originalTitle => throw _privateConstructorUsedError;
+  String? get originalTitle => throw _privateConstructorUsedError;
   @JsonKey(name: "overview")
-  String get overview => throw _privateConstructorUsedError;
+  String? get overview => throw _privateConstructorUsedError;
   @JsonKey(name: "popularity")
-  double get popularity => throw _privateConstructorUsedError;
+  double? get popularity => throw _privateConstructorUsedError;
   @JsonKey(name: "poster_path")
-  String get posterPath => throw _privateConstructorUsedError;
+  String? get posterPath => throw _privateConstructorUsedError;
   @JsonKey(name: "production_companies")
-  List<ProductionCompany> get productionCompanies =>
+  List<ProductionCompany>? get productionCompanies =>
       throw _privateConstructorUsedError;
   @JsonKey(name: "production_countries")
-  List<ProductionCountry> get productionCountries =>
+  List<ProductionCountry>? get productionCountries =>
       throw _privateConstructorUsedError;
   @JsonKey(name: "release_date")
   DateTime get releaseDate => throw _privateConstructorUsedError;
   @JsonKey(name: "revenue")
-  int get revenue => throw _privateConstructorUsedError;
+  int? get revenue => throw _privateConstructorUsedError;
   @JsonKey(name: "runtime")
-  int get runtime => throw _privateConstructorUsedError;
+  int? get runtime => throw _privateConstructorUsedError;
   @JsonKey(name: "spoken_languages")
-  List<SpokenLanguage> get spokenLanguages =>
+  List<SpokenLanguage>? get spokenLanguages =>
       throw _privateConstructorUsedError;
   @JsonKey(name: "status")
-  String get status => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
   @JsonKey(name: "tagline")
-  String get tagline => throw _privateConstructorUsedError;
+  String? get tagline => throw _privateConstructorUsedError;
   @JsonKey(name: "title")
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: "video")
-  bool get video => throw _privateConstructorUsedError;
+  bool? get video => throw _privateConstructorUsedError;
   @JsonKey(name: "vote_average")
-  double get voteAverage => throw _privateConstructorUsedError;
+  double? get voteAverage => throw _privateConstructorUsedError;
   @JsonKey(name: "vote_count")
-  int get voteCount => throw _privateConstructorUsedError;
+  int? get voteCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -93,34 +93,34 @@ abstract class $MovieDetailsCopyWith<$Res> {
       {@JsonKey(name: "adult") bool adult,
       @JsonKey(name: "backdrop_path") String backdropPath,
       @JsonKey(name: "belongs_to_collection")
-      BelongsToCollection belongsToCollection,
-      @JsonKey(name: "budget") int budget,
-      @JsonKey(name: "genres") List<Genre> genres,
-      @JsonKey(name: "homepage") String homepage,
-      @JsonKey(name: "id") int id,
-      @JsonKey(name: "imdb_id") String imdbId,
-      @JsonKey(name: "origin_country") List<String> originCountry,
-      @JsonKey(name: "original_language") String originalLanguage,
-      @JsonKey(name: "original_title") String originalTitle,
-      @JsonKey(name: "overview") String overview,
-      @JsonKey(name: "popularity") double popularity,
-      @JsonKey(name: "poster_path") String posterPath,
+      BelongsToCollection? belongsToCollection,
+      @JsonKey(name: "budget") int? budget,
+      @JsonKey(name: "genres") List<Genre>? genres,
+      @JsonKey(name: "homepage") String? homepage,
+      @JsonKey(name: "id") int? id,
+      @JsonKey(name: "imdb_id") String? imdbId,
+      @JsonKey(name: "origin_country") List<String>? originCountry,
+      @JsonKey(name: "original_language") String? originalLanguage,
+      @JsonKey(name: "original_title") String? originalTitle,
+      @JsonKey(name: "overview") String? overview,
+      @JsonKey(name: "popularity") double? popularity,
+      @JsonKey(name: "poster_path") String? posterPath,
       @JsonKey(name: "production_companies")
-      List<ProductionCompany> productionCompanies,
+      List<ProductionCompany>? productionCompanies,
       @JsonKey(name: "production_countries")
-      List<ProductionCountry> productionCountries,
+      List<ProductionCountry>? productionCountries,
       @JsonKey(name: "release_date") DateTime releaseDate,
-      @JsonKey(name: "revenue") int revenue,
-      @JsonKey(name: "runtime") int runtime,
-      @JsonKey(name: "spoken_languages") List<SpokenLanguage> spokenLanguages,
-      @JsonKey(name: "status") String status,
-      @JsonKey(name: "tagline") String tagline,
-      @JsonKey(name: "title") String title,
-      @JsonKey(name: "video") bool video,
-      @JsonKey(name: "vote_average") double voteAverage,
-      @JsonKey(name: "vote_count") int voteCount});
+      @JsonKey(name: "revenue") int? revenue,
+      @JsonKey(name: "runtime") int? runtime,
+      @JsonKey(name: "spoken_languages") List<SpokenLanguage>? spokenLanguages,
+      @JsonKey(name: "status") String? status,
+      @JsonKey(name: "tagline") String? tagline,
+      @JsonKey(name: "title") String? title,
+      @JsonKey(name: "video") bool? video,
+      @JsonKey(name: "vote_average") double? voteAverage,
+      @JsonKey(name: "vote_count") int? voteCount});
 
-  $BelongsToCollectionCopyWith<$Res> get belongsToCollection;
+  $BelongsToCollectionCopyWith<$Res>? get belongsToCollection;
 }
 
 /// @nodoc
@@ -138,30 +138,30 @@ class _$MovieDetailsCopyWithImpl<$Res, $Val extends MovieDetails>
   $Res call({
     Object? adult = null,
     Object? backdropPath = null,
-    Object? belongsToCollection = null,
-    Object? budget = null,
-    Object? genres = null,
-    Object? homepage = null,
-    Object? id = null,
-    Object? imdbId = null,
-    Object? originCountry = null,
-    Object? originalLanguage = null,
-    Object? originalTitle = null,
-    Object? overview = null,
-    Object? popularity = null,
-    Object? posterPath = null,
-    Object? productionCompanies = null,
-    Object? productionCountries = null,
+    Object? belongsToCollection = freezed,
+    Object? budget = freezed,
+    Object? genres = freezed,
+    Object? homepage = freezed,
+    Object? id = freezed,
+    Object? imdbId = freezed,
+    Object? originCountry = freezed,
+    Object? originalLanguage = freezed,
+    Object? originalTitle = freezed,
+    Object? overview = freezed,
+    Object? popularity = freezed,
+    Object? posterPath = freezed,
+    Object? productionCompanies = freezed,
+    Object? productionCountries = freezed,
     Object? releaseDate = null,
-    Object? revenue = null,
-    Object? runtime = null,
-    Object? spokenLanguages = null,
-    Object? status = null,
-    Object? tagline = null,
-    Object? title = null,
-    Object? video = null,
-    Object? voteAverage = null,
-    Object? voteCount = null,
+    Object? revenue = freezed,
+    Object? runtime = freezed,
+    Object? spokenLanguages = freezed,
+    Object? status = freezed,
+    Object? tagline = freezed,
+    Object? title = freezed,
+    Object? video = freezed,
+    Object? voteAverage = freezed,
+    Object? voteCount = freezed,
   }) {
     return _then(_value.copyWith(
       adult: null == adult
@@ -172,109 +172,113 @@ class _$MovieDetailsCopyWithImpl<$Res, $Val extends MovieDetails>
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
               as String,
-      belongsToCollection: null == belongsToCollection
+      belongsToCollection: freezed == belongsToCollection
           ? _value.belongsToCollection
           : belongsToCollection // ignore: cast_nullable_to_non_nullable
-              as BelongsToCollection,
-      budget: null == budget
+              as BelongsToCollection?,
+      budget: freezed == budget
           ? _value.budget
           : budget // ignore: cast_nullable_to_non_nullable
-              as int,
-      genres: null == genres
+              as int?,
+      genres: freezed == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<Genre>,
-      homepage: null == homepage
+              as List<Genre>?,
+      homepage: freezed == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
+              as String?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      imdbId: null == imdbId
+              as int?,
+      imdbId: freezed == imdbId
           ? _value.imdbId
           : imdbId // ignore: cast_nullable_to_non_nullable
-              as String,
-      originCountry: null == originCountry
+              as String?,
+      originCountry: freezed == originCountry
           ? _value.originCountry
           : originCountry // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      originalLanguage: null == originalLanguage
+              as List<String>?,
+      originalLanguage: freezed == originalLanguage
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
-              as String,
-      originalTitle: null == originalTitle
+              as String?,
+      originalTitle: freezed == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      overview: null == overview
+              as String?,
+      overview: freezed == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
-              as String,
-      popularity: null == popularity
+              as String?,
+      popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double,
-      posterPath: null == posterPath
+              as double?,
+      posterPath: freezed == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String,
-      productionCompanies: null == productionCompanies
+              as String?,
+      productionCompanies: freezed == productionCompanies
           ? _value.productionCompanies
           : productionCompanies // ignore: cast_nullable_to_non_nullable
-              as List<ProductionCompany>,
-      productionCountries: null == productionCountries
+              as List<ProductionCompany>?,
+      productionCountries: freezed == productionCountries
           ? _value.productionCountries
           : productionCountries // ignore: cast_nullable_to_non_nullable
-              as List<ProductionCountry>,
+              as List<ProductionCountry>?,
       releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      revenue: null == revenue
+      revenue: freezed == revenue
           ? _value.revenue
           : revenue // ignore: cast_nullable_to_non_nullable
-              as int,
-      runtime: null == runtime
+              as int?,
+      runtime: freezed == runtime
           ? _value.runtime
           : runtime // ignore: cast_nullable_to_non_nullable
-              as int,
-      spokenLanguages: null == spokenLanguages
+              as int?,
+      spokenLanguages: freezed == spokenLanguages
           ? _value.spokenLanguages
           : spokenLanguages // ignore: cast_nullable_to_non_nullable
-              as List<SpokenLanguage>,
-      status: null == status
+              as List<SpokenLanguage>?,
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      tagline: null == tagline
+              as String?,
+      tagline: freezed == tagline
           ? _value.tagline
           : tagline // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
+              as String?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      video: null == video
+              as String?,
+      video: freezed == video
           ? _value.video
           : video // ignore: cast_nullable_to_non_nullable
-              as bool,
-      voteAverage: null == voteAverage
+              as bool?,
+      voteAverage: freezed == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double,
-      voteCount: null == voteCount
+              as double?,
+      voteCount: freezed == voteCount
           ? _value.voteCount
           : voteCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $BelongsToCollectionCopyWith<$Res> get belongsToCollection {
-    return $BelongsToCollectionCopyWith<$Res>(_value.belongsToCollection,
+  $BelongsToCollectionCopyWith<$Res>? get belongsToCollection {
+    if (_value.belongsToCollection == null) {
+      return null;
+    }
+
+    return $BelongsToCollectionCopyWith<$Res>(_value.belongsToCollection!,
         (value) {
       return _then(_value.copyWith(belongsToCollection: value) as $Val);
     });
@@ -293,35 +297,35 @@ abstract class _$$MovieDetailsImplCopyWith<$Res>
       {@JsonKey(name: "adult") bool adult,
       @JsonKey(name: "backdrop_path") String backdropPath,
       @JsonKey(name: "belongs_to_collection")
-      BelongsToCollection belongsToCollection,
-      @JsonKey(name: "budget") int budget,
-      @JsonKey(name: "genres") List<Genre> genres,
-      @JsonKey(name: "homepage") String homepage,
-      @JsonKey(name: "id") int id,
-      @JsonKey(name: "imdb_id") String imdbId,
-      @JsonKey(name: "origin_country") List<String> originCountry,
-      @JsonKey(name: "original_language") String originalLanguage,
-      @JsonKey(name: "original_title") String originalTitle,
-      @JsonKey(name: "overview") String overview,
-      @JsonKey(name: "popularity") double popularity,
-      @JsonKey(name: "poster_path") String posterPath,
+      BelongsToCollection? belongsToCollection,
+      @JsonKey(name: "budget") int? budget,
+      @JsonKey(name: "genres") List<Genre>? genres,
+      @JsonKey(name: "homepage") String? homepage,
+      @JsonKey(name: "id") int? id,
+      @JsonKey(name: "imdb_id") String? imdbId,
+      @JsonKey(name: "origin_country") List<String>? originCountry,
+      @JsonKey(name: "original_language") String? originalLanguage,
+      @JsonKey(name: "original_title") String? originalTitle,
+      @JsonKey(name: "overview") String? overview,
+      @JsonKey(name: "popularity") double? popularity,
+      @JsonKey(name: "poster_path") String? posterPath,
       @JsonKey(name: "production_companies")
-      List<ProductionCompany> productionCompanies,
+      List<ProductionCompany>? productionCompanies,
       @JsonKey(name: "production_countries")
-      List<ProductionCountry> productionCountries,
+      List<ProductionCountry>? productionCountries,
       @JsonKey(name: "release_date") DateTime releaseDate,
-      @JsonKey(name: "revenue") int revenue,
-      @JsonKey(name: "runtime") int runtime,
-      @JsonKey(name: "spoken_languages") List<SpokenLanguage> spokenLanguages,
-      @JsonKey(name: "status") String status,
-      @JsonKey(name: "tagline") String tagline,
-      @JsonKey(name: "title") String title,
-      @JsonKey(name: "video") bool video,
-      @JsonKey(name: "vote_average") double voteAverage,
-      @JsonKey(name: "vote_count") int voteCount});
+      @JsonKey(name: "revenue") int? revenue,
+      @JsonKey(name: "runtime") int? runtime,
+      @JsonKey(name: "spoken_languages") List<SpokenLanguage>? spokenLanguages,
+      @JsonKey(name: "status") String? status,
+      @JsonKey(name: "tagline") String? tagline,
+      @JsonKey(name: "title") String? title,
+      @JsonKey(name: "video") bool? video,
+      @JsonKey(name: "vote_average") double? voteAverage,
+      @JsonKey(name: "vote_count") int? voteCount});
 
   @override
-  $BelongsToCollectionCopyWith<$Res> get belongsToCollection;
+  $BelongsToCollectionCopyWith<$Res>? get belongsToCollection;
 }
 
 /// @nodoc
@@ -337,30 +341,30 @@ class __$$MovieDetailsImplCopyWithImpl<$Res>
   $Res call({
     Object? adult = null,
     Object? backdropPath = null,
-    Object? belongsToCollection = null,
-    Object? budget = null,
-    Object? genres = null,
-    Object? homepage = null,
-    Object? id = null,
-    Object? imdbId = null,
-    Object? originCountry = null,
-    Object? originalLanguage = null,
-    Object? originalTitle = null,
-    Object? overview = null,
-    Object? popularity = null,
-    Object? posterPath = null,
-    Object? productionCompanies = null,
-    Object? productionCountries = null,
+    Object? belongsToCollection = freezed,
+    Object? budget = freezed,
+    Object? genres = freezed,
+    Object? homepage = freezed,
+    Object? id = freezed,
+    Object? imdbId = freezed,
+    Object? originCountry = freezed,
+    Object? originalLanguage = freezed,
+    Object? originalTitle = freezed,
+    Object? overview = freezed,
+    Object? popularity = freezed,
+    Object? posterPath = freezed,
+    Object? productionCompanies = freezed,
+    Object? productionCountries = freezed,
     Object? releaseDate = null,
-    Object? revenue = null,
-    Object? runtime = null,
-    Object? spokenLanguages = null,
-    Object? status = null,
-    Object? tagline = null,
-    Object? title = null,
-    Object? video = null,
-    Object? voteAverage = null,
-    Object? voteCount = null,
+    Object? revenue = freezed,
+    Object? runtime = freezed,
+    Object? spokenLanguages = freezed,
+    Object? status = freezed,
+    Object? tagline = freezed,
+    Object? title = freezed,
+    Object? video = freezed,
+    Object? voteAverage = freezed,
+    Object? voteCount = freezed,
   }) {
     return _then(_$MovieDetailsImpl(
       adult: null == adult
@@ -371,102 +375,102 @@ class __$$MovieDetailsImplCopyWithImpl<$Res>
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
               as String,
-      belongsToCollection: null == belongsToCollection
+      belongsToCollection: freezed == belongsToCollection
           ? _value.belongsToCollection
           : belongsToCollection // ignore: cast_nullable_to_non_nullable
-              as BelongsToCollection,
-      budget: null == budget
+              as BelongsToCollection?,
+      budget: freezed == budget
           ? _value.budget
           : budget // ignore: cast_nullable_to_non_nullable
-              as int,
-      genres: null == genres
+              as int?,
+      genres: freezed == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<Genre>,
-      homepage: null == homepage
+              as List<Genre>?,
+      homepage: freezed == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
+              as String?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      imdbId: null == imdbId
+              as int?,
+      imdbId: freezed == imdbId
           ? _value.imdbId
           : imdbId // ignore: cast_nullable_to_non_nullable
-              as String,
-      originCountry: null == originCountry
+              as String?,
+      originCountry: freezed == originCountry
           ? _value._originCountry
           : originCountry // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      originalLanguage: null == originalLanguage
+              as List<String>?,
+      originalLanguage: freezed == originalLanguage
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
-              as String,
-      originalTitle: null == originalTitle
+              as String?,
+      originalTitle: freezed == originalTitle
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      overview: null == overview
+              as String?,
+      overview: freezed == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
-              as String,
-      popularity: null == popularity
+              as String?,
+      popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double,
-      posterPath: null == posterPath
+              as double?,
+      posterPath: freezed == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String,
-      productionCompanies: null == productionCompanies
+              as String?,
+      productionCompanies: freezed == productionCompanies
           ? _value._productionCompanies
           : productionCompanies // ignore: cast_nullable_to_non_nullable
-              as List<ProductionCompany>,
-      productionCountries: null == productionCountries
+              as List<ProductionCompany>?,
+      productionCountries: freezed == productionCountries
           ? _value._productionCountries
           : productionCountries // ignore: cast_nullable_to_non_nullable
-              as List<ProductionCountry>,
+              as List<ProductionCountry>?,
       releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      revenue: null == revenue
+      revenue: freezed == revenue
           ? _value.revenue
           : revenue // ignore: cast_nullable_to_non_nullable
-              as int,
-      runtime: null == runtime
+              as int?,
+      runtime: freezed == runtime
           ? _value.runtime
           : runtime // ignore: cast_nullable_to_non_nullable
-              as int,
-      spokenLanguages: null == spokenLanguages
+              as int?,
+      spokenLanguages: freezed == spokenLanguages
           ? _value._spokenLanguages
           : spokenLanguages // ignore: cast_nullable_to_non_nullable
-              as List<SpokenLanguage>,
-      status: null == status
+              as List<SpokenLanguage>?,
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      tagline: null == tagline
+              as String?,
+      tagline: freezed == tagline
           ? _value.tagline
           : tagline // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
+              as String?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      video: null == video
+              as String?,
+      video: freezed == video
           ? _value.video
           : video // ignore: cast_nullable_to_non_nullable
-              as bool,
-      voteAverage: null == voteAverage
+              as bool?,
+      voteAverage: freezed == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
-              as double,
-      voteCount: null == voteCount
+              as double?,
+      voteCount: freezed == voteCount
           ? _value.voteCount
           : voteCount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -479,26 +483,26 @@ class _$MovieDetailsImpl implements _MovieDetails {
       @JsonKey(name: "backdrop_path") required this.backdropPath,
       @JsonKey(name: "belongs_to_collection") required this.belongsToCollection,
       @JsonKey(name: "budget") required this.budget,
-      @JsonKey(name: "genres") required final List<Genre> genres,
+      @JsonKey(name: "genres") required final List<Genre>? genres,
       @JsonKey(name: "homepage") required this.homepage,
       @JsonKey(name: "id") required this.id,
       @JsonKey(name: "imdb_id") required this.imdbId,
       @JsonKey(name: "origin_country")
-      required final List<String> originCountry,
+      required final List<String>? originCountry,
       @JsonKey(name: "original_language") required this.originalLanguage,
       @JsonKey(name: "original_title") required this.originalTitle,
       @JsonKey(name: "overview") required this.overview,
       @JsonKey(name: "popularity") required this.popularity,
       @JsonKey(name: "poster_path") required this.posterPath,
       @JsonKey(name: "production_companies")
-      required final List<ProductionCompany> productionCompanies,
+      required final List<ProductionCompany>? productionCompanies,
       @JsonKey(name: "production_countries")
-      required final List<ProductionCountry> productionCountries,
+      required final List<ProductionCountry>? productionCountries,
       @JsonKey(name: "release_date") required this.releaseDate,
       @JsonKey(name: "revenue") required this.revenue,
       @JsonKey(name: "runtime") required this.runtime,
       @JsonKey(name: "spoken_languages")
-      required final List<SpokenLanguage> spokenLanguages,
+      required final List<SpokenLanguage>? spokenLanguages,
       @JsonKey(name: "status") required this.status,
       @JsonKey(name: "tagline") required this.tagline,
       @JsonKey(name: "title") required this.title,
@@ -522,70 +526,78 @@ class _$MovieDetailsImpl implements _MovieDetails {
   final String backdropPath;
   @override
   @JsonKey(name: "belongs_to_collection")
-  final BelongsToCollection belongsToCollection;
+  final BelongsToCollection? belongsToCollection;
   @override
   @JsonKey(name: "budget")
-  final int budget;
-  final List<Genre> _genres;
+  final int? budget;
+  final List<Genre>? _genres;
   @override
   @JsonKey(name: "genres")
-  List<Genre> get genres {
+  List<Genre>? get genres {
+    final value = _genres;
+    if (value == null) return null;
     if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_genres);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   @JsonKey(name: "homepage")
-  final String homepage;
+  final String? homepage;
   @override
   @JsonKey(name: "id")
-  final int id;
+  final int? id;
   @override
   @JsonKey(name: "imdb_id")
-  final String imdbId;
-  final List<String> _originCountry;
+  final String? imdbId;
+  final List<String>? _originCountry;
   @override
   @JsonKey(name: "origin_country")
-  List<String> get originCountry {
+  List<String>? get originCountry {
+    final value = _originCountry;
+    if (value == null) return null;
     if (_originCountry is EqualUnmodifiableListView) return _originCountry;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_originCountry);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   @JsonKey(name: "original_language")
-  final String originalLanguage;
+  final String? originalLanguage;
   @override
   @JsonKey(name: "original_title")
-  final String originalTitle;
+  final String? originalTitle;
   @override
   @JsonKey(name: "overview")
-  final String overview;
+  final String? overview;
   @override
   @JsonKey(name: "popularity")
-  final double popularity;
+  final double? popularity;
   @override
   @JsonKey(name: "poster_path")
-  final String posterPath;
-  final List<ProductionCompany> _productionCompanies;
+  final String? posterPath;
+  final List<ProductionCompany>? _productionCompanies;
   @override
   @JsonKey(name: "production_companies")
-  List<ProductionCompany> get productionCompanies {
+  List<ProductionCompany>? get productionCompanies {
+    final value = _productionCompanies;
+    if (value == null) return null;
     if (_productionCompanies is EqualUnmodifiableListView)
       return _productionCompanies;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_productionCompanies);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<ProductionCountry> _productionCountries;
+  final List<ProductionCountry>? _productionCountries;
   @override
   @JsonKey(name: "production_countries")
-  List<ProductionCountry> get productionCountries {
+  List<ProductionCountry>? get productionCountries {
+    final value = _productionCountries;
+    if (value == null) return null;
     if (_productionCountries is EqualUnmodifiableListView)
       return _productionCountries;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_productionCountries);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -593,37 +605,39 @@ class _$MovieDetailsImpl implements _MovieDetails {
   final DateTime releaseDate;
   @override
   @JsonKey(name: "revenue")
-  final int revenue;
+  final int? revenue;
   @override
   @JsonKey(name: "runtime")
-  final int runtime;
-  final List<SpokenLanguage> _spokenLanguages;
+  final int? runtime;
+  final List<SpokenLanguage>? _spokenLanguages;
   @override
   @JsonKey(name: "spoken_languages")
-  List<SpokenLanguage> get spokenLanguages {
+  List<SpokenLanguage>? get spokenLanguages {
+    final value = _spokenLanguages;
+    if (value == null) return null;
     if (_spokenLanguages is EqualUnmodifiableListView) return _spokenLanguages;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_spokenLanguages);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   @JsonKey(name: "status")
-  final String status;
+  final String? status;
   @override
   @JsonKey(name: "tagline")
-  final String tagline;
+  final String? tagline;
   @override
   @JsonKey(name: "title")
-  final String title;
+  final String? title;
   @override
   @JsonKey(name: "video")
-  final bool video;
+  final bool? video;
   @override
   @JsonKey(name: "vote_average")
-  final double voteAverage;
+  final double? voteAverage;
   @override
   @JsonKey(name: "vote_count")
-  final int voteCount;
+  final int? voteCount;
 
   @override
   String toString() {
@@ -729,35 +743,35 @@ abstract class _MovieDetails implements MovieDetails {
           {@JsonKey(name: "adult") required final bool adult,
           @JsonKey(name: "backdrop_path") required final String backdropPath,
           @JsonKey(name: "belongs_to_collection")
-          required final BelongsToCollection belongsToCollection,
-          @JsonKey(name: "budget") required final int budget,
-          @JsonKey(name: "genres") required final List<Genre> genres,
-          @JsonKey(name: "homepage") required final String homepage,
-          @JsonKey(name: "id") required final int id,
-          @JsonKey(name: "imdb_id") required final String imdbId,
+          required final BelongsToCollection? belongsToCollection,
+          @JsonKey(name: "budget") required final int? budget,
+          @JsonKey(name: "genres") required final List<Genre>? genres,
+          @JsonKey(name: "homepage") required final String? homepage,
+          @JsonKey(name: "id") required final int? id,
+          @JsonKey(name: "imdb_id") required final String? imdbId,
           @JsonKey(name: "origin_country")
-          required final List<String> originCountry,
+          required final List<String>? originCountry,
           @JsonKey(name: "original_language")
-          required final String originalLanguage,
-          @JsonKey(name: "original_title") required final String originalTitle,
-          @JsonKey(name: "overview") required final String overview,
-          @JsonKey(name: "popularity") required final double popularity,
-          @JsonKey(name: "poster_path") required final String posterPath,
+          required final String? originalLanguage,
+          @JsonKey(name: "original_title") required final String? originalTitle,
+          @JsonKey(name: "overview") required final String? overview,
+          @JsonKey(name: "popularity") required final double? popularity,
+          @JsonKey(name: "poster_path") required final String? posterPath,
           @JsonKey(name: "production_companies")
-          required final List<ProductionCompany> productionCompanies,
+          required final List<ProductionCompany>? productionCompanies,
           @JsonKey(name: "production_countries")
-          required final List<ProductionCountry> productionCountries,
+          required final List<ProductionCountry>? productionCountries,
           @JsonKey(name: "release_date") required final DateTime releaseDate,
-          @JsonKey(name: "revenue") required final int revenue,
-          @JsonKey(name: "runtime") required final int runtime,
+          @JsonKey(name: "revenue") required final int? revenue,
+          @JsonKey(name: "runtime") required final int? runtime,
           @JsonKey(name: "spoken_languages")
-          required final List<SpokenLanguage> spokenLanguages,
-          @JsonKey(name: "status") required final String status,
-          @JsonKey(name: "tagline") required final String tagline,
-          @JsonKey(name: "title") required final String title,
-          @JsonKey(name: "video") required final bool video,
-          @JsonKey(name: "vote_average") required final double voteAverage,
-          @JsonKey(name: "vote_count") required final int voteCount}) =
+          required final List<SpokenLanguage>? spokenLanguages,
+          @JsonKey(name: "status") required final String? status,
+          @JsonKey(name: "tagline") required final String? tagline,
+          @JsonKey(name: "title") required final String? title,
+          @JsonKey(name: "video") required final bool? video,
+          @JsonKey(name: "vote_average") required final double? voteAverage,
+          @JsonKey(name: "vote_count") required final int? voteCount}) =
       _$MovieDetailsImpl;
 
   factory _MovieDetails.fromJson(Map<String, dynamic> json) =
@@ -771,76 +785,76 @@ abstract class _MovieDetails implements MovieDetails {
   String get backdropPath;
   @override
   @JsonKey(name: "belongs_to_collection")
-  BelongsToCollection get belongsToCollection;
+  BelongsToCollection? get belongsToCollection;
   @override
   @JsonKey(name: "budget")
-  int get budget;
+  int? get budget;
   @override
   @JsonKey(name: "genres")
-  List<Genre> get genres;
+  List<Genre>? get genres;
   @override
   @JsonKey(name: "homepage")
-  String get homepage;
+  String? get homepage;
   @override
   @JsonKey(name: "id")
-  int get id;
+  int? get id;
   @override
   @JsonKey(name: "imdb_id")
-  String get imdbId;
+  String? get imdbId;
   @override
   @JsonKey(name: "origin_country")
-  List<String> get originCountry;
+  List<String>? get originCountry;
   @override
   @JsonKey(name: "original_language")
-  String get originalLanguage;
+  String? get originalLanguage;
   @override
   @JsonKey(name: "original_title")
-  String get originalTitle;
+  String? get originalTitle;
   @override
   @JsonKey(name: "overview")
-  String get overview;
+  String? get overview;
   @override
   @JsonKey(name: "popularity")
-  double get popularity;
+  double? get popularity;
   @override
   @JsonKey(name: "poster_path")
-  String get posterPath;
+  String? get posterPath;
   @override
   @JsonKey(name: "production_companies")
-  List<ProductionCompany> get productionCompanies;
+  List<ProductionCompany>? get productionCompanies;
   @override
   @JsonKey(name: "production_countries")
-  List<ProductionCountry> get productionCountries;
+  List<ProductionCountry>? get productionCountries;
   @override
   @JsonKey(name: "release_date")
   DateTime get releaseDate;
   @override
   @JsonKey(name: "revenue")
-  int get revenue;
+  int? get revenue;
   @override
   @JsonKey(name: "runtime")
-  int get runtime;
+  int? get runtime;
   @override
   @JsonKey(name: "spoken_languages")
-  List<SpokenLanguage> get spokenLanguages;
+  List<SpokenLanguage>? get spokenLanguages;
   @override
   @JsonKey(name: "status")
-  String get status;
+  String? get status;
   @override
   @JsonKey(name: "tagline")
-  String get tagline;
+  String? get tagline;
   @override
   @JsonKey(name: "title")
-  String get title;
+  String? get title;
   @override
   @JsonKey(name: "video")
-  bool get video;
+  bool? get video;
   @override
   @JsonKey(name: "vote_average")
-  double get voteAverage;
+  double? get voteAverage;
   @override
   @JsonKey(name: "vote_count")
-  int get voteCount;
+  int? get voteCount;
   @override
   @JsonKey(ignore: true)
   _$$MovieDetailsImplCopyWith<_$MovieDetailsImpl> get copyWith =>

@@ -120,7 +120,7 @@ class MovieDetailsScreen extends ConsumerWidget {
                           children: [
                             Row(
                               children: [
-                                for (var cont in movieData.originCountry)
+                                for (var cont in movieData.originCountry ?? [])
                                   Text(
                                       "${movieData.status} (${movieData.originalLanguage} $cont)"),
                                 const SizedBox(
@@ -136,7 +136,7 @@ class MovieDetailsScreen extends ConsumerWidget {
                               spacing: 5,
                               runSpacing: 5.0,
                               children: [
-                                for (var genre in movieData.genres)
+                                for (var genre in movieData.genres ?? [])
                                   GenreWidget(genre)
                               ],
                             ),
@@ -173,12 +173,12 @@ class MovieDetailsScreen extends ConsumerWidget {
                               height: 7,
                             ),
                             Text(
-                              movieData.overview,
+                              movieData.overview ?? "",
                               style: TextStyle(
                                   fontSize: 12, color: Colors.grey.shade800),
                             ),
                             const Divider(),
-                            Production(movieData.productionCompanies),
+                            Production(movieData.productionCompanies ?? []),
                             const Divider(),
                             CasteDetails(movieId: movieId)
                           ],

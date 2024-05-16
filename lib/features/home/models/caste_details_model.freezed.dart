@@ -231,27 +231,27 @@ mixin _$Cast {
   @JsonKey(name: "adult")
   bool get adult => throw _privateConstructorUsedError;
   @JsonKey(name: "gender")
-  int get gender => throw _privateConstructorUsedError;
+  int? get gender => throw _privateConstructorUsedError;
   @JsonKey(name: "id")
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: "known_for_department")
-  String get knownForDepartment => throw _privateConstructorUsedError;
+  String? get knownForDepartment => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: "original_name")
-  String get originalName => throw _privateConstructorUsedError;
+  String? get originalName => throw _privateConstructorUsedError;
   @JsonKey(name: "popularity")
-  double get popularity => throw _privateConstructorUsedError;
+  double? get popularity => throw _privateConstructorUsedError;
   @JsonKey(name: "profile_path")
   String? get profilePath => throw _privateConstructorUsedError;
   @JsonKey(name: "cast_id")
-  int get castId => throw _privateConstructorUsedError;
+  int? get castId => throw _privateConstructorUsedError;
   @JsonKey(name: "character")
   String? get character => throw _privateConstructorUsedError;
   @JsonKey(name: "credit_id")
-  String get creditId => throw _privateConstructorUsedError;
+  String? get creditId => throw _privateConstructorUsedError;
   @JsonKey(name: "order")
-  int get order => throw _privateConstructorUsedError;
+  int? get order => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -265,17 +265,17 @@ abstract class $CastCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "adult") bool adult,
-      @JsonKey(name: "gender") int gender,
+      @JsonKey(name: "gender") int? gender,
       @JsonKey(name: "id") int id,
-      @JsonKey(name: "known_for_department") String knownForDepartment,
+      @JsonKey(name: "known_for_department") String? knownForDepartment,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "original_name") String originalName,
-      @JsonKey(name: "popularity") double popularity,
+      @JsonKey(name: "original_name") String? originalName,
+      @JsonKey(name: "popularity") double? popularity,
       @JsonKey(name: "profile_path") String? profilePath,
-      @JsonKey(name: "cast_id") int castId,
+      @JsonKey(name: "cast_id") int? castId,
       @JsonKey(name: "character") String? character,
-      @JsonKey(name: "credit_id") String creditId,
-      @JsonKey(name: "order") int order});
+      @JsonKey(name: "credit_id") String? creditId,
+      @JsonKey(name: "order") int? order});
 }
 
 /// @nodoc
@@ -292,67 +292,67 @@ class _$CastCopyWithImpl<$Res, $Val extends Cast>
   @override
   $Res call({
     Object? adult = null,
-    Object? gender = null,
+    Object? gender = freezed,
     Object? id = null,
-    Object? knownForDepartment = null,
+    Object? knownForDepartment = freezed,
     Object? name = null,
-    Object? originalName = null,
-    Object? popularity = null,
+    Object? originalName = freezed,
+    Object? popularity = freezed,
     Object? profilePath = freezed,
-    Object? castId = null,
+    Object? castId = freezed,
     Object? character = freezed,
-    Object? creditId = null,
-    Object? order = null,
+    Object? creditId = freezed,
+    Object? order = freezed,
   }) {
     return _then(_value.copyWith(
       adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      knownForDepartment: null == knownForDepartment
+      knownForDepartment: freezed == knownForDepartment
           ? _value.knownForDepartment
           : knownForDepartment // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      originalName: null == originalName
+      originalName: freezed == originalName
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
-              as String,
-      popularity: null == popularity
+              as String?,
+      popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       profilePath: freezed == profilePath
           ? _value.profilePath
           : profilePath // ignore: cast_nullable_to_non_nullable
               as String?,
-      castId: null == castId
+      castId: freezed == castId
           ? _value.castId
           : castId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       character: freezed == character
           ? _value.character
           : character // ignore: cast_nullable_to_non_nullable
               as String?,
-      creditId: null == creditId
+      creditId: freezed == creditId
           ? _value.creditId
           : creditId // ignore: cast_nullable_to_non_nullable
-              as String,
-      order: null == order
+              as String?,
+      order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -366,17 +366,17 @@ abstract class _$$CastImplCopyWith<$Res> implements $CastCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "adult") bool adult,
-      @JsonKey(name: "gender") int gender,
+      @JsonKey(name: "gender") int? gender,
       @JsonKey(name: "id") int id,
-      @JsonKey(name: "known_for_department") String knownForDepartment,
+      @JsonKey(name: "known_for_department") String? knownForDepartment,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "original_name") String originalName,
-      @JsonKey(name: "popularity") double popularity,
+      @JsonKey(name: "original_name") String? originalName,
+      @JsonKey(name: "popularity") double? popularity,
       @JsonKey(name: "profile_path") String? profilePath,
-      @JsonKey(name: "cast_id") int castId,
+      @JsonKey(name: "cast_id") int? castId,
       @JsonKey(name: "character") String? character,
-      @JsonKey(name: "credit_id") String creditId,
-      @JsonKey(name: "order") int order});
+      @JsonKey(name: "credit_id") String? creditId,
+      @JsonKey(name: "order") int? order});
 }
 
 /// @nodoc
@@ -390,67 +390,67 @@ class __$$CastImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? adult = null,
-    Object? gender = null,
+    Object? gender = freezed,
     Object? id = null,
-    Object? knownForDepartment = null,
+    Object? knownForDepartment = freezed,
     Object? name = null,
-    Object? originalName = null,
-    Object? popularity = null,
+    Object? originalName = freezed,
+    Object? popularity = freezed,
     Object? profilePath = freezed,
-    Object? castId = null,
+    Object? castId = freezed,
     Object? character = freezed,
-    Object? creditId = null,
-    Object? order = null,
+    Object? creditId = freezed,
+    Object? order = freezed,
   }) {
     return _then(_$CastImpl(
       adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      knownForDepartment: null == knownForDepartment
+      knownForDepartment: freezed == knownForDepartment
           ? _value.knownForDepartment
           : knownForDepartment // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      originalName: null == originalName
+      originalName: freezed == originalName
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
-              as String,
-      popularity: null == popularity
+              as String?,
+      popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       profilePath: freezed == profilePath
           ? _value.profilePath
           : profilePath // ignore: cast_nullable_to_non_nullable
               as String?,
-      castId: null == castId
+      castId: freezed == castId
           ? _value.castId
           : castId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       character: freezed == character
           ? _value.character
           : character // ignore: cast_nullable_to_non_nullable
               as String?,
-      creditId: null == creditId
+      creditId: freezed == creditId
           ? _value.creditId
           : creditId // ignore: cast_nullable_to_non_nullable
-              as String,
-      order: null == order
+              as String?,
+      order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -480,37 +480,37 @@ class _$CastImpl implements _Cast {
   final bool adult;
   @override
   @JsonKey(name: "gender")
-  final int gender;
+  final int? gender;
   @override
   @JsonKey(name: "id")
   final int id;
   @override
   @JsonKey(name: "known_for_department")
-  final String knownForDepartment;
+  final String? knownForDepartment;
   @override
   @JsonKey(name: "name")
   final String name;
   @override
   @JsonKey(name: "original_name")
-  final String originalName;
+  final String? originalName;
   @override
   @JsonKey(name: "popularity")
-  final double popularity;
+  final double? popularity;
   @override
   @JsonKey(name: "profile_path")
   final String? profilePath;
   @override
   @JsonKey(name: "cast_id")
-  final int castId;
+  final int? castId;
   @override
   @JsonKey(name: "character")
   final String? character;
   @override
   @JsonKey(name: "credit_id")
-  final String creditId;
+  final String? creditId;
   @override
   @JsonKey(name: "order")
-  final int order;
+  final int? order;
 
   @override
   String toString() {
@@ -576,18 +576,18 @@ class _$CastImpl implements _Cast {
 abstract class _Cast implements Cast {
   const factory _Cast(
       {@JsonKey(name: "adult") required final bool adult,
-      @JsonKey(name: "gender") required final int gender,
+      @JsonKey(name: "gender") required final int? gender,
       @JsonKey(name: "id") required final int id,
       @JsonKey(name: "known_for_department")
-      required final String knownForDepartment,
+      required final String? knownForDepartment,
       @JsonKey(name: "name") required final String name,
-      @JsonKey(name: "original_name") required final String originalName,
-      @JsonKey(name: "popularity") required final double popularity,
+      @JsonKey(name: "original_name") required final String? originalName,
+      @JsonKey(name: "popularity") required final double? popularity,
       @JsonKey(name: "profile_path") required final String? profilePath,
-      @JsonKey(name: "cast_id") required final int castId,
+      @JsonKey(name: "cast_id") required final int? castId,
       @JsonKey(name: "character") required final String? character,
-      @JsonKey(name: "credit_id") required final String creditId,
-      @JsonKey(name: "order") required final int order}) = _$CastImpl;
+      @JsonKey(name: "credit_id") required final String? creditId,
+      @JsonKey(name: "order") required final int? order}) = _$CastImpl;
 
   factory _Cast.fromJson(Map<String, dynamic> json) = _$CastImpl.fromJson;
 
@@ -596,37 +596,37 @@ abstract class _Cast implements Cast {
   bool get adult;
   @override
   @JsonKey(name: "gender")
-  int get gender;
+  int? get gender;
   @override
   @JsonKey(name: "id")
   int get id;
   @override
   @JsonKey(name: "known_for_department")
-  String get knownForDepartment;
+  String? get knownForDepartment;
   @override
   @JsonKey(name: "name")
   String get name;
   @override
   @JsonKey(name: "original_name")
-  String get originalName;
+  String? get originalName;
   @override
   @JsonKey(name: "popularity")
-  double get popularity;
+  double? get popularity;
   @override
   @JsonKey(name: "profile_path")
   String? get profilePath;
   @override
   @JsonKey(name: "cast_id")
-  int get castId;
+  int? get castId;
   @override
   @JsonKey(name: "character")
   String? get character;
   @override
   @JsonKey(name: "credit_id")
-  String get creditId;
+  String? get creditId;
   @override
   @JsonKey(name: "order")
-  int get order;
+  int? get order;
   @override
   @JsonKey(ignore: true)
   _$$CastImplCopyWith<_$CastImpl> get copyWith =>
@@ -642,25 +642,25 @@ mixin _$Crew {
   @JsonKey(name: "adult")
   bool get adult => throw _privateConstructorUsedError;
   @JsonKey(name: "gender")
-  int get gender => throw _privateConstructorUsedError;
+  int? get gender => throw _privateConstructorUsedError;
   @JsonKey(name: "id")
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: "known_for_department")
-  String get knownForDepartment => throw _privateConstructorUsedError;
+  String? get knownForDepartment => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: "original_name")
-  String get originalName => throw _privateConstructorUsedError;
+  String? get originalName => throw _privateConstructorUsedError;
   @JsonKey(name: "popularity")
-  double get popularity => throw _privateConstructorUsedError;
+  double? get popularity => throw _privateConstructorUsedError;
   @JsonKey(name: "profile_path")
-  String get profilePath => throw _privateConstructorUsedError;
+  String? get profilePath => throw _privateConstructorUsedError;
   @JsonKey(name: "credit_id")
-  String get creditId => throw _privateConstructorUsedError;
+  String? get creditId => throw _privateConstructorUsedError;
   @JsonKey(name: "department")
-  String get department => throw _privateConstructorUsedError;
+  String? get department => throw _privateConstructorUsedError;
   @JsonKey(name: "job")
-  String get job => throw _privateConstructorUsedError;
+  String? get job => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -674,16 +674,16 @@ abstract class $CrewCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "adult") bool adult,
-      @JsonKey(name: "gender") int gender,
+      @JsonKey(name: "gender") int? gender,
       @JsonKey(name: "id") int id,
-      @JsonKey(name: "known_for_department") String knownForDepartment,
+      @JsonKey(name: "known_for_department") String? knownForDepartment,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "original_name") String originalName,
-      @JsonKey(name: "popularity") double popularity,
-      @JsonKey(name: "profile_path") String profilePath,
-      @JsonKey(name: "credit_id") String creditId,
-      @JsonKey(name: "department") String department,
-      @JsonKey(name: "job") String job});
+      @JsonKey(name: "original_name") String? originalName,
+      @JsonKey(name: "popularity") double? popularity,
+      @JsonKey(name: "profile_path") String? profilePath,
+      @JsonKey(name: "credit_id") String? creditId,
+      @JsonKey(name: "department") String? department,
+      @JsonKey(name: "job") String? job});
 }
 
 /// @nodoc
@@ -700,62 +700,62 @@ class _$CrewCopyWithImpl<$Res, $Val extends Crew>
   @override
   $Res call({
     Object? adult = null,
-    Object? gender = null,
+    Object? gender = freezed,
     Object? id = null,
-    Object? knownForDepartment = null,
+    Object? knownForDepartment = freezed,
     Object? name = null,
-    Object? originalName = null,
-    Object? popularity = null,
-    Object? profilePath = null,
-    Object? creditId = null,
-    Object? department = null,
-    Object? job = null,
+    Object? originalName = freezed,
+    Object? popularity = freezed,
+    Object? profilePath = freezed,
+    Object? creditId = freezed,
+    Object? department = freezed,
+    Object? job = freezed,
   }) {
     return _then(_value.copyWith(
       adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      knownForDepartment: null == knownForDepartment
+      knownForDepartment: freezed == knownForDepartment
           ? _value.knownForDepartment
           : knownForDepartment // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      originalName: null == originalName
+      originalName: freezed == originalName
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
-              as String,
-      popularity: null == popularity
+              as String?,
+      popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double,
-      profilePath: null == profilePath
+              as double?,
+      profilePath: freezed == profilePath
           ? _value.profilePath
           : profilePath // ignore: cast_nullable_to_non_nullable
-              as String,
-      creditId: null == creditId
+              as String?,
+      creditId: freezed == creditId
           ? _value.creditId
           : creditId // ignore: cast_nullable_to_non_nullable
-              as String,
-      department: null == department
+              as String?,
+      department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as String,
-      job: null == job
+              as String?,
+      job: freezed == job
           ? _value.job
           : job // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -769,16 +769,16 @@ abstract class _$$CrewImplCopyWith<$Res> implements $CrewCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "adult") bool adult,
-      @JsonKey(name: "gender") int gender,
+      @JsonKey(name: "gender") int? gender,
       @JsonKey(name: "id") int id,
-      @JsonKey(name: "known_for_department") String knownForDepartment,
+      @JsonKey(name: "known_for_department") String? knownForDepartment,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "original_name") String originalName,
-      @JsonKey(name: "popularity") double popularity,
-      @JsonKey(name: "profile_path") String profilePath,
-      @JsonKey(name: "credit_id") String creditId,
-      @JsonKey(name: "department") String department,
-      @JsonKey(name: "job") String job});
+      @JsonKey(name: "original_name") String? originalName,
+      @JsonKey(name: "popularity") double? popularity,
+      @JsonKey(name: "profile_path") String? profilePath,
+      @JsonKey(name: "credit_id") String? creditId,
+      @JsonKey(name: "department") String? department,
+      @JsonKey(name: "job") String? job});
 }
 
 /// @nodoc
@@ -792,62 +792,62 @@ class __$$CrewImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? adult = null,
-    Object? gender = null,
+    Object? gender = freezed,
     Object? id = null,
-    Object? knownForDepartment = null,
+    Object? knownForDepartment = freezed,
     Object? name = null,
-    Object? originalName = null,
-    Object? popularity = null,
-    Object? profilePath = null,
-    Object? creditId = null,
-    Object? department = null,
-    Object? job = null,
+    Object? originalName = freezed,
+    Object? popularity = freezed,
+    Object? profilePath = freezed,
+    Object? creditId = freezed,
+    Object? department = freezed,
+    Object? job = freezed,
   }) {
     return _then(_$CrewImpl(
       adult: null == adult
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      gender: null == gender
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      knownForDepartment: null == knownForDepartment
+      knownForDepartment: freezed == knownForDepartment
           ? _value.knownForDepartment
           : knownForDepartment // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      originalName: null == originalName
+      originalName: freezed == originalName
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
-              as String,
-      popularity: null == popularity
+              as String?,
+      popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
-              as double,
-      profilePath: null == profilePath
+              as double?,
+      profilePath: freezed == profilePath
           ? _value.profilePath
           : profilePath // ignore: cast_nullable_to_non_nullable
-              as String,
-      creditId: null == creditId
+              as String?,
+      creditId: freezed == creditId
           ? _value.creditId
           : creditId // ignore: cast_nullable_to_non_nullable
-              as String,
-      department: null == department
+              as String?,
+      department: freezed == department
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as String,
-      job: null == job
+              as String?,
+      job: freezed == job
           ? _value.job
           : job // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -876,34 +876,34 @@ class _$CrewImpl implements _Crew {
   final bool adult;
   @override
   @JsonKey(name: "gender")
-  final int gender;
+  final int? gender;
   @override
   @JsonKey(name: "id")
   final int id;
   @override
   @JsonKey(name: "known_for_department")
-  final String knownForDepartment;
+  final String? knownForDepartment;
   @override
   @JsonKey(name: "name")
   final String name;
   @override
   @JsonKey(name: "original_name")
-  final String originalName;
+  final String? originalName;
   @override
   @JsonKey(name: "popularity")
-  final double popularity;
+  final double? popularity;
   @override
   @JsonKey(name: "profile_path")
-  final String profilePath;
+  final String? profilePath;
   @override
   @JsonKey(name: "credit_id")
-  final String creditId;
+  final String? creditId;
   @override
   @JsonKey(name: "department")
-  final String department;
+  final String? department;
   @override
   @JsonKey(name: "job")
-  final String job;
+  final String? job;
 
   @override
   String toString() {
@@ -967,17 +967,17 @@ class _$CrewImpl implements _Crew {
 abstract class _Crew implements Crew {
   const factory _Crew(
       {@JsonKey(name: "adult") required final bool adult,
-      @JsonKey(name: "gender") required final int gender,
+      @JsonKey(name: "gender") required final int? gender,
       @JsonKey(name: "id") required final int id,
       @JsonKey(name: "known_for_department")
-      required final String knownForDepartment,
+      required final String? knownForDepartment,
       @JsonKey(name: "name") required final String name,
-      @JsonKey(name: "original_name") required final String originalName,
-      @JsonKey(name: "popularity") required final double popularity,
-      @JsonKey(name: "profile_path") required final String profilePath,
-      @JsonKey(name: "credit_id") required final String creditId,
-      @JsonKey(name: "department") required final String department,
-      @JsonKey(name: "job") required final String job}) = _$CrewImpl;
+      @JsonKey(name: "original_name") required final String? originalName,
+      @JsonKey(name: "popularity") required final double? popularity,
+      @JsonKey(name: "profile_path") required final String? profilePath,
+      @JsonKey(name: "credit_id") required final String? creditId,
+      @JsonKey(name: "department") required final String? department,
+      @JsonKey(name: "job") required final String? job}) = _$CrewImpl;
 
   factory _Crew.fromJson(Map<String, dynamic> json) = _$CrewImpl.fromJson;
 
@@ -986,34 +986,34 @@ abstract class _Crew implements Crew {
   bool get adult;
   @override
   @JsonKey(name: "gender")
-  int get gender;
+  int? get gender;
   @override
   @JsonKey(name: "id")
   int get id;
   @override
   @JsonKey(name: "known_for_department")
-  String get knownForDepartment;
+  String? get knownForDepartment;
   @override
   @JsonKey(name: "name")
   String get name;
   @override
   @JsonKey(name: "original_name")
-  String get originalName;
+  String? get originalName;
   @override
   @JsonKey(name: "popularity")
-  double get popularity;
+  double? get popularity;
   @override
   @JsonKey(name: "profile_path")
-  String get profilePath;
+  String? get profilePath;
   @override
   @JsonKey(name: "credit_id")
-  String get creditId;
+  String? get creditId;
   @override
   @JsonKey(name: "department")
-  String get department;
+  String? get department;
   @override
   @JsonKey(name: "job")
-  String get job;
+  String? get job;
   @override
   @JsonKey(ignore: true)
   _$$CrewImplCopyWith<_$CrewImpl> get copyWith =>

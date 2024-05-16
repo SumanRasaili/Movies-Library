@@ -28,17 +28,17 @@ Map<String, dynamic> _$$CasteDetailsModelImplToJson(
 
 _$CastImpl _$$CastImplFromJson(Map<String, dynamic> json) => _$CastImpl(
       adult: json['adult'] as bool,
-      gender: (json['gender'] as num).toInt(),
+      gender: (json['gender'] as num?)?.toInt(),
       id: (json['id'] as num).toInt(),
-      knownForDepartment: json['known_for_department'] as String,
+      knownForDepartment: json['known_for_department'] as String?,
       name: json['name'] as String,
-      originalName: json['original_name'] as String,
-      popularity: (json['popularity'] as num).toDouble(),
+      originalName: json['original_name'] as String?,
+      popularity: (json['popularity'] as num?)?.toDouble(),
       profilePath: json['profile_path'] as String?,
-      castId: (json['cast_id'] as num).toInt(),
+      castId: (json['cast_id'] as num?)?.toInt(),
       character: json['character'] as String?,
-      creditId: json['credit_id'] as String,
-      order: (json['order'] as num).toInt(),
+      creditId: json['credit_id'] as String?,
+      order: (json['order'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$CastImplToJson(_$CastImpl instance) =>
@@ -59,16 +59,16 @@ Map<String, dynamic> _$$CastImplToJson(_$CastImpl instance) =>
 
 _$CrewImpl _$$CrewImplFromJson(Map<String, dynamic> json) => _$CrewImpl(
       adult: json['adult'] as bool,
-      gender: (json['gender'] as num).toInt(),
+      gender: (json['gender'] as num?)?.toInt(),
       id: (json['id'] as num).toInt(),
-      knownForDepartment: json['known_for_department'] as String,
+      knownForDepartment: json['known_for_department'] as String?,
       name: json['name'] as String,
-      originalName: json['original_name'] as String,
-      popularity: (json['popularity'] as num).toDouble(),
-      profilePath: json['profile_path'] as String,
-      creditId: json['credit_id'] as String,
-      department: json['department'] as String,
-      job: json['job'] as String,
+      originalName: json['original_name'] as String?,
+      popularity: (json['popularity'] as num?)?.toDouble(),
+      profilePath: json['profile_path'] as String?,
+      creditId: json['credit_id'] as String?,
+      department: json['department'] as String?,
+      job: json['job'] as String?,
     );
 
 Map<String, dynamic> _$$CrewImplToJson(_$CrewImpl instance) =>

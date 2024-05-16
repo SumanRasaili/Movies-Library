@@ -13,19 +13,20 @@ class CasteDetails extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final casteProv = ref.watch(getCasteDetailsProvider(movieId: movieId));
     return casteProv.when(data: (casteData) {
-      print("The caste Dat == ${casteData.cast}");
-      print("The caste Dat == ${casteData.id.toString()}");
       return Column(
         children: [
+          const SizedBox(
+            height: 10,
+          ),
           const Text("Casting Crews"),
           const SizedBox(
-            height: 5,
+            height: 10,
           ),
           SizedBox(
             height: 120,
             child: ListView.builder(
               shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
+              // physics: const NeverScrollableScrollPhysics(),
               itemCount: casteData.cast.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
