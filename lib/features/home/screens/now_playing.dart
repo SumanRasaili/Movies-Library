@@ -1,10 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdbapp/config/app_constants.dart';
 import 'package:tmdbapp/features/home/providers/now_playing_provider.dart';
+import 'package:tmdbapp/features/home/screens/movie_details.dart';
 
 class NowplayingWidget extends HookConsumerWidget {
   const NowplayingWidget({super.key});
@@ -43,55 +46,61 @@ class NowplayingWidget extends HookConsumerWidget {
                     var item = nowPlayingList[index];
                     return Column(
                       children: [
-                        Stack(
-                          children: <Widget>[
-                            CachedNetworkImage(
-                                imageUrl: AppConstants.imageBaseUrl +
-                                    item.backdropPath),
-                            Positioned(
-                              bottom: 0.0,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "${item.originalTitle} (${item.releaseDate.year})",
-                                      maxLines: 1,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 1,
-                                    ),
-                                    Row(
-                                      children: [
-                                        const Icon(
-                                          Icons.star,
+                        GestureDetector(
+                          onTap: () {
+                            context.push(MovieDetailsScreen.routename);
+                          },
+                          child: Stack(
+                            children: <Widget>[
+                              CachedNetworkImage(
+                                  imageUrl: AppConstants.imageBaseUrl +
+                                      item.backdropPath),
+                              Positioned(
+                                bottom: 0.0,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "${item.originalTitle} (${item.releaseDate.year})",
+                                        maxLines: 1,
+                                        style: const TextStyle(
                                           color: Colors.white,
-                                          size: 15,
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                        const SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          item.voteAverage.toString(),
-                                          style: const TextStyle(
+                                      ),
+                                      const SizedBox(
+                                        height: 1,
+                                      ),
+                                      Row(
+                                        children: [
+                                          const Icon(
+                                            Icons.star,
                                             color: Colors.white,
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.bold,
+                                            size: 15,
                                           ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
+                                          const SizedBox(
+                                            width: 5,
+                                          ),
+                                          Text(
+                                            item.voteAverage.toString(),
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     );

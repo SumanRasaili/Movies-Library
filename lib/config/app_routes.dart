@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tmdbapp/features/home/screens/home_screen.dart';
+import 'package:tmdbapp/features/home/screens/movie_details.dart';
+import 'package:tmdbapp/features/home/screens/splash_screen.dart';
 
 class AppRoutes {
   static final router = GoRouter(
-    initialLocation: HomeScreen.routeName,
+    initialLocation: SplashScreen.routename,
     debugLogDiagnostics: true,
     routes: [
       HomeScreen.route(),
+      SplashScreen.route(),
+      MovieDetailsScreen.route(),
     ],
     errorBuilder: (context, state) {
       return const Scaffold(
