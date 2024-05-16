@@ -110,7 +110,7 @@ _$ProductionCompanyImpl _$$ProductionCompanyImplFromJson(
         Map<String, dynamic> json) =>
     _$ProductionCompanyImpl(
       id: (json['id'] as num).toInt(),
-      logoPath: json['logo_path'] as String,
+      logoPath: json['logo_path'] as String?,
       name: json['name'] as String,
       originCountry: json['origin_country'] as String,
     );

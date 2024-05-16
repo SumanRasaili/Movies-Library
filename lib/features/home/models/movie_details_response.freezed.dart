@@ -1231,7 +1231,7 @@ mixin _$ProductionCompany {
   @JsonKey(name: "id")
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: "logo_path")
-  String get logoPath => throw _privateConstructorUsedError;
+  String? get logoPath => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: "origin_country")
@@ -1251,7 +1251,7 @@ abstract class $ProductionCompanyCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "id") int id,
-      @JsonKey(name: "logo_path") String logoPath,
+      @JsonKey(name: "logo_path") String? logoPath,
       @JsonKey(name: "name") String name,
       @JsonKey(name: "origin_country") String originCountry});
 }
@@ -1270,7 +1270,7 @@ class _$ProductionCompanyCopyWithImpl<$Res, $Val extends ProductionCompany>
   @override
   $Res call({
     Object? id = null,
-    Object? logoPath = null,
+    Object? logoPath = freezed,
     Object? name = null,
     Object? originCountry = null,
   }) {
@@ -1279,10 +1279,10 @@ class _$ProductionCompanyCopyWithImpl<$Res, $Val extends ProductionCompany>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      logoPath: null == logoPath
+      logoPath: freezed == logoPath
           ? _value.logoPath
           : logoPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1305,7 +1305,7 @@ abstract class _$$ProductionCompanyImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "id") int id,
-      @JsonKey(name: "logo_path") String logoPath,
+      @JsonKey(name: "logo_path") String? logoPath,
       @JsonKey(name: "name") String name,
       @JsonKey(name: "origin_country") String originCountry});
 }
@@ -1322,7 +1322,7 @@ class __$$ProductionCompanyImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? logoPath = null,
+    Object? logoPath = freezed,
     Object? name = null,
     Object? originCountry = null,
   }) {
@@ -1331,10 +1331,10 @@ class __$$ProductionCompanyImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      logoPath: null == logoPath
+      logoPath: freezed == logoPath
           ? _value.logoPath
           : logoPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1364,7 +1364,7 @@ class _$ProductionCompanyImpl implements _ProductionCompany {
   final int id;
   @override
   @JsonKey(name: "logo_path")
-  final String logoPath;
+  final String? logoPath;
   @override
   @JsonKey(name: "name")
   final String name;
@@ -1413,7 +1413,7 @@ class _$ProductionCompanyImpl implements _ProductionCompany {
 abstract class _ProductionCompany implements ProductionCompany {
   const factory _ProductionCompany(
       {@JsonKey(name: "id") required final int id,
-      @JsonKey(name: "logo_path") required final String logoPath,
+      @JsonKey(name: "logo_path") required final String? logoPath,
       @JsonKey(name: "name") required final String name,
       @JsonKey(name: "origin_country")
       required final String originCountry}) = _$ProductionCompanyImpl;
@@ -1426,7 +1426,7 @@ abstract class _ProductionCompany implements ProductionCompany {
   int get id;
   @override
   @JsonKey(name: "logo_path")
-  String get logoPath;
+  String? get logoPath;
   @override
   @JsonKey(name: "name")
   String get name;

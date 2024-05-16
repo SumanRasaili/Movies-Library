@@ -17,8 +17,7 @@ class MovieDetailsRepoImplementation implements MovieDetailsRepo {
   Future<MovieDetails> getMovieDetails({required String movieId}) async {
     final responseData = await dioService.getResponse(
         endpoint: AppConstants.baseUrl + path(movieId: movieId));
-    print("detail is ${responseData.data}");
-    print("detail is ${responseData.data.runtimeType}");
+
     return MovieDetails.fromJson(responseData.data);
   }
 

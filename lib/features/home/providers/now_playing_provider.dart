@@ -8,7 +8,6 @@ final getAllNowPlayingProvider =
 });
 
 class GetAllPlayingNotifier extends StateNotifier<List<Result>> {
-  
   GetAllPlayingNotifier({required this.ref}) : super([]) {
     getData();
   }
@@ -16,10 +15,9 @@ class GetAllPlayingNotifier extends StateNotifier<List<Result>> {
   bool isloading = false;
 
   getData() async {
-    isloading=true;
+    isloading = true;
     final d = await ref.read(nowPlayingRepositoryProvider).getNowPlaying();
     state = d.results;
-    isloading=false;
-    print("state  ======== $state");
+    isloading = false;
   }
 }

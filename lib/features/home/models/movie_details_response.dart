@@ -69,7 +69,7 @@ class Genre with _$Genre {
 class ProductionCompany with _$ProductionCompany {
   const factory ProductionCompany({
     @JsonKey(name: "id") required int id,
-    @JsonKey(name: "logo_path") required String logoPath,
+    @JsonKey(name: "logo_path") required String? logoPath,
     @JsonKey(name: "name") required String name,
     @JsonKey(name: "origin_country") required String originCountry,
   }) = _ProductionCompany;

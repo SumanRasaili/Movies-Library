@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdbapp/config/app_constants.dart';
 import 'package:tmdbapp/features/home/models/movie_details_response.dart';
 import 'package:tmdbapp/features/home/providers/movie_details_provider.dart';
+import 'package:tmdbapp/features/home/widgets/caste_details.dart';
 
 class MovieDetailsScreen extends ConsumerWidget {
   final String movieId;
@@ -23,6 +24,7 @@ class MovieDetailsScreen extends ConsumerWidget {
     final prov = ref.watch(getAllMovieDetailsProvider(movieId: movieId));
     return Scaffold(
         body: CustomScrollView(
+      // physics: const NeverScrollableScrollPhysics(),
       slivers: [
         SliverList(
             delegate: SliverChildListDelegate([
@@ -112,72 +114,75 @@ class MovieDetailsScreen extends ConsumerWidget {
                               topRight: Radius.circular(15))),
                       // width: constraints.maxWidth,
                       height: MediaQuery.of(context).size.height,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              for (var cont in movieData.originCountry)
-                                Text(
-                                    "${movieData.status} (${movieData.originalLanguage} $cont)"),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Text("${movieData.runtime} min"),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          Wrap(
-                            spacing: 5,
-                            runSpacing: 5.0,
-                            children: [
-                              for (var genre in movieData.genres)
-                                GenreWidget(genre)
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          Row(
-                            children: [
-                              const Text(
-                                "Budget : ",
-                                style: TextStyle(fontSize: 15),
-                              ),
-                              Text("\$${movieData.budget}"),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          Row(
-                            children: [
-                              const Text(
-                                "Earning : ",
-                                style: TextStyle(fontSize: 15),
-                              ),
-                              Text("\$${movieData.revenue}"),
-                            ],
-                          ),
-                          const Divider(),
-                          const Text(
-                            "Overview : ",
-                            style: TextStyle(fontSize: 15),
-                          ),
-                          const SizedBox(
-                            height: 7,
-                          ),
-                          Text(
-                            movieData.overview,
-                            style: TextStyle(
-                                fontSize: 12, color: Colors.grey.shade800),
-                          ),
-                          const Divider(),
-                          Production(movieData.productionCompanies),
-                          const Divider(),
-                        ],
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                for (var cont in movieData.originCountry)
+                                  Text(
+                                      "${movieData.status} (${movieData.originalLanguage} $cont)"),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text("${movieData.runtime} min"),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            Wrap(
+                              spacing: 5,
+                              runSpacing: 5.0,
+                              children: [
+                                for (var genre in movieData.genres)
+                                  GenreWidget(genre)
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            Row(
+                              children: [
+                                const Text(
+                                  "Budget : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text("\$${movieData.budget}"),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            Row(
+                              children: [
+                                const Text(
+                                  "Earning : ",
+                                  style: TextStyle(fontSize: 15),
+                                ),
+                                Text("\$${movieData.revenue}"),
+                              ],
+                            ),
+                            const Divider(),
+                            const Text(
+                              "Overview : ",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 7,
+                            ),
+                            Text(
+                              movieData.overview,
+                              style: TextStyle(
+                                  fontSize: 12, color: Colors.grey.shade800),
+                            ),
+                            const Divider(),
+                            Production(movieData.productionCompanies),
+                            const Divider(),
+                            CasteDetails(movieId: movieId)
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -185,12 +190,14 @@ class MovieDetailsScreen extends ConsumerWidget {
               ),
             );
           }, error: (error, stackTrace) {
-            return Center(
-              child: Column(
-                children: [
-                  Text("Error Occured $error"),
-                  Text("Error Stack Trace $stackTrace"),
-                ],
+            return SafeArea(
+              child: Center(
+                child: Column(
+                  children: [
+                    Text("Error Occured $error"),
+                    Text("Error Stack Trace $stackTrace"),
+                  ],
+                ),
               ),
             );
           }, loading: () {
@@ -266,7 +273,7 @@ class ProducerWidget extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        productionCompany.logoPath.isNotEmpty
+        productionCompany.logoPath == null
             ? Container(
                 height: 50,
                 width: 50,
@@ -283,7 +290,7 @@ class ProducerWidget extends StatelessWidget {
                     shape: BoxShape.circle,
                     image: DecorationImage(
                         image: NetworkImage(AppConstants.imageBaseUrl +
-                            productionCompany.logoPath))),
+                            productionCompany.logoPath!))),
               ),
         Text(
           productionCompany.name,
