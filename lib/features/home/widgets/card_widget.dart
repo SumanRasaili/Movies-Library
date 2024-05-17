@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdbapp/config/app_constants.dart';
 import 'package:tmdbapp/features/home/models/now_playing_model.dart';
-import 'package:tmdbapp/features/home/models/similar_movie_model.dart';
 
 class CardWidget extends ConsumerWidget {
   final Result model;
