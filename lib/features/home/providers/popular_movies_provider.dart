@@ -13,10 +13,14 @@ class PopularMoviesNotifier extends StateNotifier<NowPlayingModel> {
             page: 1, results: [], totalPages: 0, totalResults: 0)) {
     getData();
   }
+
+  bool isLoading = false;
   Ref ref;
   getData() async {
+    isLoading = true;
     final d = await ref.read(popularMovieRepoImplProvider).getPopularMovies();
     state = d;
+    isLoading = false;
     print("The sttttt =========== $state");
   }
 }
