@@ -18,10 +18,6 @@ class HomeScreen extends ConsumerWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            // const SliverAppBar(
-            //   centerTitle: true,
-            //   title: Text("HomeScreen"),
-            // ),
             SliverList(
                 delegate: SliverChildListDelegate([
               Padding(
@@ -46,7 +42,6 @@ class HomeScreen extends ConsumerWidget {
                       height: 15,
                     ),
                     const NowplayingWidget(),
-                   
                     const SizedBox(
                       height: 15,
                     ),

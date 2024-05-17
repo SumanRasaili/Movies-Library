@@ -7,7 +7,7 @@ part of 'similar_movies_provider.dart';
 // **************************************************************************
 
 String _$getAllSimilarMoviesHash() =>
-    r'038eb102c6915f37d9ef829398d87e33f0d75673';
+    r'f183a69e7dd1162d5ce9185d66f1f50db480f078';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -35,7 +35,7 @@ class _SystemHash {
 const getAllSimilarMoviesProvider = GetAllSimilarMoviesFamily();
 
 /// See also [getAllSimilarMovies].
-class GetAllSimilarMoviesFamily extends Family<AsyncValue<SimilarMovieModel>> {
+class GetAllSimilarMoviesFamily extends Family<AsyncValue<NowPlayingModel>> {
   /// See also [getAllSimilarMovies].
   const GetAllSimilarMoviesFamily();
 
@@ -74,7 +74,7 @@ class GetAllSimilarMoviesFamily extends Family<AsyncValue<SimilarMovieModel>> {
 
 /// See also [getAllSimilarMovies].
 class GetAllSimilarMoviesProvider
-    extends AutoDisposeFutureProvider<SimilarMovieModel> {
+    extends AutoDisposeFutureProvider<NowPlayingModel> {
   /// See also [getAllSimilarMovies].
   GetAllSimilarMoviesProvider({
     required String movieId,
@@ -109,8 +109,7 @@ class GetAllSimilarMoviesProvider
 
   @override
   Override overrideWith(
-    FutureOr<SimilarMovieModel> Function(GetAllSimilarMoviesRef provider)
-        create,
+    FutureOr<NowPlayingModel> Function(GetAllSimilarMoviesRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -127,7 +126,7 @@ class GetAllSimilarMoviesProvider
   }
 
   @override
-  AutoDisposeFutureProviderElement<SimilarMovieModel> createElement() {
+  AutoDisposeFutureProviderElement<NowPlayingModel> createElement() {
     return _GetAllSimilarMoviesProviderElement(this);
   }
 
@@ -145,14 +144,13 @@ class GetAllSimilarMoviesProvider
   }
 }
 
-mixin GetAllSimilarMoviesRef
-    on AutoDisposeFutureProviderRef<SimilarMovieModel> {
+mixin GetAllSimilarMoviesRef on AutoDisposeFutureProviderRef<NowPlayingModel> {
   /// The parameter `movieId` of this provider.
   String get movieId;
 }
 
 class _GetAllSimilarMoviesProviderElement
-    extends AutoDisposeFutureProviderElement<SimilarMovieModel>
+    extends AutoDisposeFutureProviderElement<NowPlayingModel>
     with GetAllSimilarMoviesRef {
   _GetAllSimilarMoviesProviderElement(super.provider);
 

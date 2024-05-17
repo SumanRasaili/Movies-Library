@@ -54,7 +54,7 @@ class NowplayingWidget extends HookConsumerWidget {
                             children: <Widget>[
                               CachedNetworkImage(
                                   imageUrl: AppConstants.imageBaseUrl +
-                                      item.backdropPath),
+                                      item.backdropPath!),
                               Positioned(
                                 bottom: 0.0,
                                 child: Padding(
@@ -64,7 +64,7 @@ class NowplayingWidget extends HookConsumerWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "${item.originalTitle} (${item.releaseDate.year})",
+                                        "${item.originalTitle} (${item.releaseDate?.year})",
                                         maxLines: 1,
                                         style: const TextStyle(
                                           color: Colors.white,
