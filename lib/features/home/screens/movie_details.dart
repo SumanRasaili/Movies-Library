@@ -208,8 +208,11 @@ class MovieDetailsScreen extends ConsumerWidget {
           ),
         );
       }, loading: () {
-        return const Center(
-          child: CircularProgressIndicator.adaptive(),
+        return SizedBox(
+          height: MediaQuery.of(context).size.height -
+              kToolbarHeight -
+              kTextTabBarHeight,
+          child: const Center(child: CircularProgressIndicator.adaptive()),
         );
       })
     ]));
