@@ -61,7 +61,7 @@ class MovieDetailsScreen extends ConsumerWidget {
                           Text(
                               "${movieData.status}( ${movieData.originalLanguage} ) "),
                           for (var cont in movieData.originCountry ?? [])
-                            Text("${cont}  "),
+                            Text("$cont  "),
                           const SizedBox(
                             width: 10,
                           ),

@@ -16,10 +16,11 @@ class SimilarMoviesWidget extends ConsumerWidget {
     return simialrMovies.when(data: (similarData) {
       return SizedBox(
         height: 200,
+        // width: 200,
         child: ListView.builder(
           // physics: const NeverScrollableScrollPhysics(),
           itemCount: similarData.results.length,
-          shrinkWrap: true,
+          // shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return CardWidget(

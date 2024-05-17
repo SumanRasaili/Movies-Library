@@ -16,19 +16,18 @@ class CardWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    print("Url is ${AppConstants.imageBaseUrl}${model.backdropPath}}");
     return GestureDetector(
       onTap: onPressed,
       child: Card(
           margin: const EdgeInsets.all(10),
           clipBehavior: Clip.hardEdge,
           child: Column(
-            mainAxisSize: MainAxisSize.min,
+            // mainAxisSize: MainAxisSize.min,
             children: [
               model.backdropPath == null
                   ? Container(
                       height: 150,
-                      width: 150,
+                      // width: 150,
                       decoration: const BoxDecoration(),
                       child: Image.network(
                           "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"))
@@ -36,16 +35,13 @@ class CardWidget extends ConsumerWidget {
                       fit: BoxFit.cover,
                       height: 150,
                       width: 200,
-                      imageUrl:
-                          "${AppConstants.imageBaseUrl}${model.backdropPath}"),
-              const SizedBox(
-                width: 8,
-              ),
+                      imageUrl: AppConstants.imageBaseUrl + model.backdropPath!,
+                    ),
               Expanded(
                 child: Text(
                   model.title ?? "-",
                   overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
+                  maxLines: 2,
                   style: TextStyle(
                       fontSize: 17,
                       color: Theme.of(context).colorScheme.primary),
