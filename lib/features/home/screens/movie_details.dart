@@ -6,6 +6,7 @@ import 'package:tmdbapp/config/app_constants.dart';
 import 'package:tmdbapp/features/home/models/movie_details_response.dart';
 import 'package:tmdbapp/features/home/providers/movie_details_provider.dart';
 import 'package:tmdbapp/features/home/widgets/caste_details.dart';
+import 'package:tmdbapp/features/home/widgets/similar_movies.dart';
 
 class MovieDetailsScreen extends ConsumerWidget {
   final String movieId;
@@ -23,190 +24,192 @@ class MovieDetailsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final prov = ref.watch(getAllMovieDetailsProvider(movieId: movieId));
     return Scaffold(
-        body: CustomScrollView(
-      physics: const NeverScrollableScrollPhysics(),
-      slivers: [
-        SliverList(
-            delegate: SliverChildListDelegate([
-          prov.when(data: (movieData) {
-            return SizedBox(
+        body: ListView(children: [
+      prov.when(data: (movieData) {
+        return Stack(
+          // fit: StackFit.expand,
+          children: [
+            Container(
               height: MediaQuery.of(context).size.height,
-              child: Stack(
-                // fit: StackFit.loose,
-                children: [
-                  Positioned(
-                    height: MediaQuery.of(context).size.height * .40,
-                    child: CachedNetworkImage(
-                        fit: BoxFit.cover,
-                        imageUrl:
-                            AppConstants.imageBaseUrl + movieData.backdropPath),
-                  ),
-                  Positioned(
-                      left: 10,
-                      top: 15,
-                      child: IconButton(
-                          padding: const EdgeInsets.all(0),
-                          onPressed: () {
-                            context.pop();
-                          },
-                          icon: const Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                            size: 30,
-                          ))),
-                  Positioned(
-                      left: 10,
-                      top: MediaQuery.of(context).size.height * .3,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+              decoration: BoxDecoration(color: Colors.grey.shade100),
+            ),
+            CachedNetworkImage(
+                fit: BoxFit.cover,
+                height: MediaQuery.of(context).size.height * .45,
+                imageUrl: AppConstants.imageBaseUrl + movieData.backdropPath),
+            Positioned(
+              // bottom: 5,
+              top: MediaQuery.of(context).size.height * 0.35,
+              bottom: 10,
+              child: Container(
+                height: 500,
+                padding: const EdgeInsets.all(15),
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15))),
+
+                // height: MediaQuery.of(context).size.height,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
                         children: [
                           Text(
-                            "${movieData.title} (${movieData.releaseDate.year})",
-                            style: const TextStyle(
-                                overflow: TextOverflow.ellipsis,
-                                color: Colors.white,
-                                fontSize: 18),
-                          ),
+                              "${movieData.status}( ${movieData.originalLanguage} ) "),
+                          for (var cont in movieData.originCountry ?? [])
+                            Text("${cont}  "),
                           const SizedBox(
-                            height: 1,
+                            width: 10,
                           ),
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.star,
-                                color: Colors.white,
-                                size: 15,
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                movieData.voteAverage.toString(),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Text(
-                            movieData.tagline.toString(),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                          Text("${movieData.runtime} min"),
                         ],
-                      )),
-                  Positioned(
-                    // bottom: 5,
-                    top: MediaQuery.of(context).size.height * 0.40,
-                    child: Container(
-                      padding: const EdgeInsets.all(15),
-                      width: MediaQuery.of(context).size.width,
-                      decoration: const BoxDecoration(
-                          // color: Colors.grey,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(15),
-                              topRight: Radius.circular(15))),
-
-                      // height: MediaQuery.of(context).size.height,
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                for (var cont in movieData.originCountry ?? [])
-                                  Text(
-                                      "${movieData.status} (${movieData.originalLanguage} $cont)"),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Text("${movieData.runtime} min"),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 7,
-                            ),
-                            Wrap(
-                              spacing: 5,
-                              runSpacing: 5.0,
-                              children: [
-                                for (var genre in movieData.genres ?? [])
-                                  GenreWidget(genre)
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 7,
-                            ),
-                            Row(
-                              children: [
-                                const Text(
-                                  "Budget : ",
-                                  style: TextStyle(fontSize: 15),
-                                ),
-                                Text("\$${movieData.budget}"),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 7,
-                            ),
-                            Row(
-                              children: [
-                                const Text(
-                                  "Earning : ",
-                                  style: TextStyle(fontSize: 15),
-                                ),
-                                Text("\$${movieData.revenue}"),
-                              ],
-                            ),
-                            const Divider(),
-                            const Text(
-                              "Overview : ",
-                              style: TextStyle(fontSize: 15),
-                            ),
-                            const SizedBox(
-                              height: 7,
-                            ),
-                            Text(
-                              movieData.overview ?? "",
-                              style: TextStyle(
-                                  fontSize: 12, color: Colors.grey.shade800),
-                            ),
-                            const Divider(),
-                            Production(movieData.productionCompanies ?? []),
-                            const Divider(),
-                            CasteDetails(movieId: movieId)
-                          ],
-                        ),
                       ),
-                    ),
+                      const SizedBox(
+                        height: 7,
+                      ),
+                      Wrap(
+                        spacing: 5,
+                        runSpacing: 5.0,
+                        children: [
+                          for (var genre in movieData.genres ?? [])
+                            GenreWidget(genre)
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 7,
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            "Budget : ",
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          Text("\$${movieData.budget}"),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 7,
+                      ),
+                      Row(
+                        children: [
+                          const Text(
+                            "Earning : ",
+                            style: TextStyle(fontSize: 15),
+                          ),
+                          Text("\$${movieData.revenue}"),
+                        ],
+                      ),
+                      const Divider(),
+                      const Text(
+                        "Overview : ",
+                        style: TextStyle(fontSize: 15),
+                      ),
+                      const SizedBox(
+                        height: 7,
+                      ),
+                      Text(
+                        movieData.overview ?? "",
+                        style: TextStyle(
+                            fontSize: 12, color: Colors.grey.shade800),
+                      ),
+                      const Divider(),
+                      Production(movieData.productionCompanies ?? []),
+                      const Divider(),
+                      CasteDetails(movieId: movieId),
+                      const Divider(),
+                      const Text(
+                        "Similar Movies",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                      SimilarMoviesWidget(movieId: movieId)
+                    ],
                   ),
-                ],
-              ),
-            );
-          }, error: (error, stackTrace) {
-            return SafeArea(
-              child: Center(
-                child: Column(
-                  children: [
-                    Text("Error Occured $error"),
-                    Text("Error Stack Trace $stackTrace"),
-                  ],
                 ),
               ),
-            );
-          }, loading: () {
-            return const Center(
-              child: CircularProgressIndicator.adaptive(),
-            );
-          })
-        ]))
-      ],
-    ));
+            ),
+            Positioned(
+                left: 10,
+                top: 15,
+                child: IconButton(
+                    padding: const EdgeInsets.all(0),
+                    onPressed: () {
+                      context.pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: 30,
+                    ))),
+            Positioned(
+                left: 10,
+                top: MediaQuery.of(context).size.height * .25,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "${movieData.title} (${movieData.releaseDate.year})",
+                      style: const TextStyle(
+                          overflow: TextOverflow.ellipsis,
+                          color: Colors.white,
+                          fontSize: 18),
+                    ),
+                    const SizedBox(
+                      height: 1,
+                    ),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.star,
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          movieData.voteAverage.toString(),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 12.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      movieData.tagline.toString(),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                )),
+          ],
+        );
+      }, error: (error, stackTrace) {
+        return SafeArea(
+          child: Center(
+            child: Column(
+              children: [
+                Text("Error Occured $error"),
+                Text("Error Stack Trace $stackTrace"),
+              ],
+            ),
+          ),
+        );
+      }, loading: () {
+        return const Center(
+          child: CircularProgressIndicator.adaptive(),
+        );
+      })
+    ]));
   }
 }
 
