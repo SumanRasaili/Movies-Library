@@ -126,6 +126,9 @@ class MovieDetailsScreen extends ConsumerWidget {
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
+                      const SizedBox(
+                        height: 5,
+                      ),
                       SimilarMoviesWidget(movieId: movieId)
                     ],
                   ),

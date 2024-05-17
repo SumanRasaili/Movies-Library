@@ -11,12 +11,20 @@ class PopularMovies extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final popularList = ref.read(popularMoviesProvider);
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Popular Movies"),
+        const Text(
+          "Popular Movies",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
         SizedBox(
           height: 200,
           child: ListView.builder(
             itemCount: popularList.results.length,
+            scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return CardWidget(
                   model: popularList.results[index], onPressed: () {});

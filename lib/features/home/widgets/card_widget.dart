@@ -19,36 +19,61 @@ class CardWidget extends ConsumerWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Card(
-          margin: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(5),
           clipBehavior: Clip.hardEdge,
-          child: Column(
-            // mainAxisSize: MainAxisSize.min,
-            children: [
-              model.backdropPath == null
-                  ? Container(
-                      height: 150,
-                      // width: 150,
-                      decoration: const BoxDecoration(),
-                      child: Image.network(
-                          "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"))
-                  : CachedNetworkImage(
+          child: model.backdropPath != null
+              ? Column(
+                  // mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CachedNetworkImage(
                       fit: BoxFit.cover,
                       height: 150,
                       width: 200,
                       imageUrl: AppConstants.imageBaseUrl + model.backdropPath!,
                     ),
-              Expanded(
-                child: Text(
-                  model.title ?? "-",
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                  style: TextStyle(
-                      fontSize: 17,
-                      color: Theme.of(context).colorScheme.primary),
-                ),
-              ),
-            ],
-          )),
+                    Container(
+                      padding: const EdgeInsets.all(8.0),
+                      width:
+                          200, // Ensure the width is consistent with the image
+                      child: Text(
+                        model.title,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              : Column(
+                  children: [
+                    Container(
+                        height: 150,
+                        width: 200,
+                        // width: 150,
+                        decoration: const BoxDecoration(),
+                        child: Image.network(
+                          "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
+                          fit: BoxFit.cover,
+                        )),
+                    Container(
+                      padding: const EdgeInsets.all(8.0),
+                      width:
+                          200, // Ensure the width is consistent with the image
+                      child: Text(
+                        model.title,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
     );
   }
 }

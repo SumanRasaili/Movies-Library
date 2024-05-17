@@ -21,10 +21,8 @@ class NowplayingWidget extends HookConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          "Playing Now",
-          style: TextStyle(fontSize: 20),
-        ),
+        const Text("Playing Now",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         const SizedBox(
           height: 5,
         ),

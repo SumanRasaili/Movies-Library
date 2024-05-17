@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdbapp/features/home/screens/now_playing.dart';
+import 'package:tmdbapp/features/home/widgets/popular_movies.dart';
 
 class HomeScreen extends ConsumerWidget {
   static const String routeName = "/home-screen";
@@ -45,10 +46,7 @@ class HomeScreen extends ConsumerWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Text(
-                      "Movies",
-                      style: TextStyle(fontSize: 20),
-                    ),
+                    const PopularMovies(),
                     SizedBox(
                       height: 200,
                       width: MediaQuery.of(context).size.width,

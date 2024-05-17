@@ -18,7 +18,6 @@ class NowPlayingRepositoryImplementation implements NowPlayingRepository {
     final responseData = await dioService.getResponse(
       endpoint: AppConstants.baseUrl + path,
     );
-    print("The responseddd ==== ${responseData.data}");
     return NowPlayingModel.fromJson(responseData.data);
   }
 

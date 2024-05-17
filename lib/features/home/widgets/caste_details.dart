@@ -15,6 +15,7 @@ class CasteDetails extends ConsumerWidget {
     return casteProv.when(data: (casteData) {
       return SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 10,

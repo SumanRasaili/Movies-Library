@@ -10,7 +10,6 @@ class CasteRepoImplementation implements CasteRepo {
   Future<CasteDetailsModel> getCasteDetails({required String movieId}) async {
     final responseData = await dioService.getResponse(
         endpoint: AppConstants.baseUrl + path(movieId: movieId));
-    print("The response data is === ${responseData.data}");
     return CasteDetailsModel.fromJson(responseData.data);
   }
 
