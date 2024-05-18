@@ -11,7 +11,8 @@ class PopularMovies extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final popularList = ref.read(popularMoviesProvider);
+    final popularList = ref.watch(popularMoviesProvider);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -32,23 +33,33 @@ class PopularMovies extends ConsumerWidget {
         const SizedBox(
           height: 5,
         ),
-        SizedBox(
-          height: 200,
-          child: ListView.builder(
-            itemCount: (popularList.results.length < 5)
-                ? popularList.results.length
-                : 5,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return CardWidget(
-                  model: popularList.results[index],
-                  onPressed: () {
-                    context.push(MovieDetailsScreen.routename,
-                        extra: popularList.results[index].id.toString());
-                  });
-            },
-          ),
-        )
+        if (popularList.isLoading && popularList.results.isEmpty) ...{
+          const CircularProgressIndicator()
+        } else if (!popularList.isLoading && popularList.results.isEmpty) ...{
+          const Center(
+            child: Text("No Data"),
+          )
+        } else ...{
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+              itemCount: (popularList.results.length < 5)
+                  ? popularList.results.length
+                  : 5,
+              // : 5,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                var results = popularList.results[index];
+                return CardWidget(
+                    model: results,
+                    onPressed: () {
+                      context.push(MovieDetailsScreen.routename,
+                          extra: results.id.toString());
+                    });
+              },
+            ),
+          )
+        }
       ],
     );
   }

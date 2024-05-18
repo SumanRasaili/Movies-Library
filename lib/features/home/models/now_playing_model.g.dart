@@ -10,6 +10,8 @@ _$NowPlayingModelImpl _$$NowPlayingModelImplFromJson(
         Map<String, dynamic> json) =>
     _$NowPlayingModelImpl(
       page: (json['page'] as num).toInt(),
+      isLoading: json['isLoading'] as bool?,
+      isPaginationLoading: json['isPaginationLoading'] as bool?,
       results: (json['results'] as List<dynamic>)
           .map((e) => Result.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -21,6 +23,8 @@ Map<String, dynamic> _$$NowPlayingModelImplToJson(
         _$NowPlayingModelImpl instance) =>
     <String, dynamic>{
       'page': instance.page,
+      'isLoading': instance.isLoading,
+      'isPaginationLoading': instance.isPaginationLoading,
       'results': instance.results,
       'total_pages': instance.totalPages,
       'total_results': instance.totalResults,

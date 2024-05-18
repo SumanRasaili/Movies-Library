@@ -11,7 +11,7 @@ class TopRatedMovies extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final topRatedList = ref.read(getAllTopRatedProvider);
+    final topRatedList = ref.watch(getAllTopRatedProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,10 +22,11 @@ class TopRatedMovies extends ConsumerWidget {
               "Top Rated Movies",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            IconButton(onPressed: () {
-
-              context.push(AllTopRatedMovies.routename);
-            }, icon: const Icon(Icons.arrow_forward_ios))
+            IconButton(
+                onPressed: () {
+                  context.push(AllTopRatedMovies.routename);
+                },
+                icon: const Icon(Icons.arrow_forward_ios))
           ],
         ),
         const SizedBox(
@@ -34,16 +35,16 @@ class TopRatedMovies extends ConsumerWidget {
         SizedBox(
           height: 200,
           child: ListView.builder(
-            itemCount: (topRatedList.results.length < 5)
-                ? topRatedList.results.length
+            itemCount: (topRatedList.results!.length < 5)
+                ? topRatedList.results!.length
                 : 5,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return CardWidget(
-                  model: topRatedList.results[index],
+                  model: topRatedList.results![index],
                   onPressed: () {
                     context.push(MovieDetailsScreen.routename,
-                        extra: topRatedList.results[index].id.toString());
+                        extra: topRatedList.results![index].id.toString());
                   });
             },
           ),

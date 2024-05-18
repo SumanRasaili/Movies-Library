@@ -17,42 +17,48 @@ class AllPopularMovies extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final popularMovies = ref.watch(popularMoviesProvider);
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          const SliverAppBar(
-            title: Text("All Popular Movies"),
-            elevation: 2,
-            // forceElevated: true,
-            floating: true,
-            pinned: true,
-          ),
-          SliverGrid.builder(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 250,
-              childAspectRatio: 0.96,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-              // childAspectRatio: ,
+      body: NotificationListener<ScrollEndNotification>(
+        onNotification: ref.read(popularMoviesProvider.notifier).pageNotify,
+        child: CustomScrollView(
+          slivers: [
+            const SliverAppBar(
+              title: Text("All Popular Movies"),
+              elevation: 2,
+              // forceElevated: true,
+              floating: true,
+              pinned: true,
             ),
-            itemCount: popularMovies.results.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15),
-                child: CardWidget(
-                    model: popularMovies.results[index],
-                    onPressed: () {
-                      context.push(MovieDetailsScreen.routename,
-                          extra: popularMovies.results[index].id.toString());
-                    }),
-              );
-            },
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 10,
+            SliverGrid.builder(
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 250,
+                childAspectRatio: 0.96,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                // childAspectRatio: ,
+              ),
+              itemCount: popularMovies.results.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(left: 15, right: 15),
+                  child: CardWidget(
+                      model: popularMovies.results[index],
+                      onPressed: () {
+                        context.push(MovieDetailsScreen.routename,
+                            extra: popularMovies.results[index].id.toString());
+                      }),
+                );
+              },
             ),
-          )
-        ],
+            SliverToBoxAdapter(
+                child: Text(
+                    "Is pagination data ${popularMovies.isPaginationLoading}")),
+            if (popularMovies.isPaginationLoading) ...{
+              const SliverToBoxAdapter(
+                child: Center(child: CircularProgressIndicator()),
+              ),
+            }
+          ],
+        ),
       ),
     );
   }

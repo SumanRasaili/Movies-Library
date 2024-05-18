@@ -17,7 +17,7 @@ class GetAllPlayingNotifier extends StateNotifier<List<Result>> {
   getData() async {
     isloading = true;
     final d = await ref.read(nowPlayingRepositoryProvider).getNowPlaying();
-    state = d.results;
+    state = d.results ?? [];
     isloading = false;
   }
 }

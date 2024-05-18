@@ -14,10 +14,11 @@ class PopularMoviesRepoImplementation implements PopularMoviesRepo {
   DioService dioService;
   PopularMoviesRepoImplementation({required this.dioService});
   @override
-  Future<NowPlayingModel> getPopularMovies() async {
+  Future<NowPlayingModel> getPopularMovies(int? page) async {
     final response = await dioService.getResponse(
-      endpoint: AppConstants.baseUrl + path,
-    );
+        endpoint: AppConstants.baseUrl + path,
+        queryParameters: {if (page != null) "page": page});
+    print("paginated or not paginated reponse is ${response.realUri}  ");
     return NowPlayingModel.fromJson(response.data);
   }
 
