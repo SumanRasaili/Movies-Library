@@ -42,69 +42,72 @@ class NowplayingWidget extends HookConsumerWidget {
                   itemCount: nowPlayingList.length,
                   itemBuilder: (context, index, realIndex) {
                     var item = nowPlayingList[index];
-                    return Column(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            context.push(MovieDetailsScreen.routename,
-                                extra: item.id.toString());
-                          },
-                          child: Stack(
-                            children: <Widget>[
-                              CachedNetworkImage(
-                                  imageUrl: AppConstants.imageBaseUrl +
-                                      item.backdropPath!),
-                              Positioned(
-                                bottom: 0.0,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        child: Text(
-                                          "${item.title} (${item.releaseDate?.year})",
-                                          maxLines: 1,
-                                          style: const TextStyle(
-                                            overflow: TextOverflow.ellipsis,
-                                            color: Colors.white,
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 1,
-                                      ),
-                                      Row(
-                                        children: [
-                                          const Icon(
-                                            Icons.star,
-                                            color: Colors.white,
-                                            size: 15,
-                                          ),
-                                          const SizedBox(
-                                            width: 5,
-                                          ),
-                                          Text(
-                                            item.voteAverage.toString(),
+                    return SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              context.push(MovieDetailsScreen.routename,
+                                  extra: item.id.toString());
+                            },
+                            child: Stack(
+                              children: <Widget>[
+                                CachedNetworkImage(
+                                    imageUrl: AppConstants.imageBaseUrl +
+                                        item.backdropPath!),
+                                Positioned(
+                                  bottom: 0.0,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 6.0, bottom: 5),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          child: Text(
+                                            "${item.title} (${item.releaseDate?.year})",
+                                            maxLines: 1,
                                             style: const TextStyle(
+                                              overflow: TextOverflow.ellipsis,
                                               color: Colors.white,
-                                              fontSize: 12.0,
+                                              fontSize: 16.0,
                                               fontWeight: FontWeight.bold,
                                             ),
                                           ),
-                                        ],
-                                      )
-                                    ],
+                                        ),
+                                        // const SizedBox(
+                                        //   height: 1,
+                                        // ),
+                                        Row(
+                                          children: [
+                                            const Icon(
+                                              Icons.star,
+                                              color: Colors.white,
+                                              size: 15,
+                                            ),
+                                            const SizedBox(
+                                              width: 5,
+                                            ),
+                                            Text(
+                                              item.voteAverage.toString(),
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     );
                   },
                   options: CarouselOptions(
