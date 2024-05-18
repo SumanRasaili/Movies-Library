@@ -24,7 +24,7 @@ class NowplayingWidget extends HookConsumerWidget {
         const Text("Playing Now",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         const SizedBox(
-          height: 5,
+          height: 15,
         ),
         if (nowPlaying.isloading && nowPlayingList.isEmpty) ...{
           const Center(
@@ -118,7 +118,7 @@ class NowplayingWidget extends HookConsumerWidget {
                       },
                       viewportFraction: 1)),
               const SizedBox(
-                width: 7,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

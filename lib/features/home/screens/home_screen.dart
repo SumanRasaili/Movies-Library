@@ -52,6 +52,7 @@ class HomeScreen extends ConsumerWidget {
                       height: 15,
                     ),
                     const PopularMovies(),
+                    
                     const SizedBox(
                       height: 15,
                     ),
