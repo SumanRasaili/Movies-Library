@@ -33,7 +33,7 @@ class PopularMovies extends ConsumerWidget {
           height: 5,
         ),
         if (popularList.isLoading && popularList.results.isEmpty) ...{
-          const CircularProgressIndicator()
+          const Center(child: CircularProgressIndicator())
         } else if (!popularList.isLoading && popularList.results.isEmpty) ...{
           const Center(
             child: Text("No Data"),

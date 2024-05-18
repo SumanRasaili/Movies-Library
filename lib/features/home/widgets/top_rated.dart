@@ -11,7 +11,7 @@ class TopRatedMovies extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final topRatedList = ref.watch(getAllTopRatedProvider);
+    final topRatedProv = ref.watch(getAllTopRatedProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -32,23 +32,33 @@ class TopRatedMovies extends ConsumerWidget {
         const SizedBox(
           height: 5,
         ),
-        SizedBox(
-          height: 200,
-          child: ListView.builder(
-            itemCount: (topRatedList.results!.length < 5)
-                ? topRatedList.results!.length
-                : 5,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return CardWidget(
-                  model: topRatedList.results![index],
-                  onPressed: () {
-                    context.push(MovieDetailsScreen.routename,
-                        extra: topRatedList.results![index].id.toString());
-                  });
-            },
-          ),
-        )
+        if (topRatedProv.isLoading && topRatedProv.results.isEmpty) ...{
+          const Center(
+            child: CircularProgressIndicator(),
+          )
+        } else if (!topRatedProv.isLoading && topRatedProv.results.isEmpty) ...{
+          const Center(
+            child: Text("No Data"),
+          )
+        } else ...{
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+              itemCount: (topRatedProv.results.length < 5)
+                  ? topRatedProv.results.length
+                  : 5,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return CardWidget(
+                    model: topRatedProv.results[index],
+                    onPressed: () {
+                      context.push(MovieDetailsScreen.routename,
+                          extra: topRatedProv.results[index].id.toString());
+                    });
+              },
+            ),
+          )
+        }
       ],
     );
   }

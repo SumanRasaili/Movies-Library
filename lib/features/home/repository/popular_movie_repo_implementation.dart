@@ -18,7 +18,6 @@ class PopularMoviesRepoImplementation implements PopularMoviesRepo {
     final response = await dioService.getResponse(
         endpoint: AppConstants.baseUrl + path,
         queryParameters: {if (page != null) "page": page});
-    print("paginated or not paginated reponse is ${response.realUri}  ");
     return NowPlayingModel.fromJson(response.data);
   }
 
