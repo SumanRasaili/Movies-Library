@@ -58,20 +58,30 @@ class SearchPage extends HookConsumerWidget {
                             size: 25,
                           ),
                         ),
-                  hintText: "Search here",
+                  hintText: "Search movie here",
                   isDense: true,
                   contentPadding: const EdgeInsets.fromLTRB(12, 11, 12, 11),
                   border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15)))),
             ),
           ),
-          if (isSearching.value)
+          if (isSearching.value && searchProv.searchResultsList.isEmpty) ...{
             const SliverToBoxAdapter(
-              child: Center(
-                child: CircularProgressIndicator(),
+              child: SizedBox(
+                  height: 350,
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  )),
+            )
+          } else if (!isSearching.value &&
+              searchProv.searchResultsList.isEmpty) ...{
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 350,
+                child: Center(child: Text("Nothing to Show")),
               ),
             )
-          else
+          } else
             SliverGrid.builder(
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 250,

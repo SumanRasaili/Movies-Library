@@ -37,7 +37,7 @@ class HomeScreen extends ConsumerWidget {
                             Icons.search,
                             size: 25,
                           ),
-                          hintText: "Search here",
+                          hintText: "Search movie here",
                           isDense: true,
                           contentPadding: EdgeInsets.fromLTRB(12, 11, 12, 11),
                           border: OutlineInputBorder(
