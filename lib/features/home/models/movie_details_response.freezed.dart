@@ -23,7 +23,7 @@ mixin _$MovieDetails {
   @JsonKey(name: "adult")
   bool get adult => throw _privateConstructorUsedError;
   @JsonKey(name: "backdrop_path")
-  String get backdropPath => throw _privateConstructorUsedError;
+  String? get backdropPath => throw _privateConstructorUsedError;
   @JsonKey(name: "belongs_to_collection")
   BelongsToCollection? get belongsToCollection =>
       throw _privateConstructorUsedError;
@@ -91,7 +91,7 @@ abstract class $MovieDetailsCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "adult") bool adult,
-      @JsonKey(name: "backdrop_path") String backdropPath,
+      @JsonKey(name: "backdrop_path") String? backdropPath,
       @JsonKey(name: "belongs_to_collection")
       BelongsToCollection? belongsToCollection,
       @JsonKey(name: "budget") int? budget,
@@ -137,7 +137,7 @@ class _$MovieDetailsCopyWithImpl<$Res, $Val extends MovieDetails>
   @override
   $Res call({
     Object? adult = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? belongsToCollection = freezed,
     Object? budget = freezed,
     Object? genres = freezed,
@@ -168,10 +168,10 @@ class _$MovieDetailsCopyWithImpl<$Res, $Val extends MovieDetails>
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       belongsToCollection: freezed == belongsToCollection
           ? _value.belongsToCollection
           : belongsToCollection // ignore: cast_nullable_to_non_nullable
@@ -295,7 +295,7 @@ abstract class _$$MovieDetailsImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "adult") bool adult,
-      @JsonKey(name: "backdrop_path") String backdropPath,
+      @JsonKey(name: "backdrop_path") String? backdropPath,
       @JsonKey(name: "belongs_to_collection")
       BelongsToCollection? belongsToCollection,
       @JsonKey(name: "budget") int? budget,
@@ -340,7 +340,7 @@ class __$$MovieDetailsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? adult = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? belongsToCollection = freezed,
     Object? budget = freezed,
     Object? genres = freezed,
@@ -371,10 +371,10 @@ class __$$MovieDetailsImplCopyWithImpl<$Res>
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       belongsToCollection: freezed == belongsToCollection
           ? _value.belongsToCollection
           : belongsToCollection // ignore: cast_nullable_to_non_nullable
@@ -523,7 +523,7 @@ class _$MovieDetailsImpl implements _MovieDetails {
   final bool adult;
   @override
   @JsonKey(name: "backdrop_path")
-  final String backdropPath;
+  final String? backdropPath;
   @override
   @JsonKey(name: "belongs_to_collection")
   final BelongsToCollection? belongsToCollection;
@@ -741,7 +741,7 @@ class _$MovieDetailsImpl implements _MovieDetails {
 abstract class _MovieDetails implements MovieDetails {
   const factory _MovieDetails(
           {@JsonKey(name: "adult") required final bool adult,
-          @JsonKey(name: "backdrop_path") required final String backdropPath,
+          @JsonKey(name: "backdrop_path") required final String? backdropPath,
           @JsonKey(name: "belongs_to_collection")
           required final BelongsToCollection? belongsToCollection,
           @JsonKey(name: "budget") required final int? budget,
@@ -782,7 +782,7 @@ abstract class _MovieDetails implements MovieDetails {
   bool get adult;
   @override
   @JsonKey(name: "backdrop_path")
-  String get backdropPath;
+  String? get backdropPath;
   @override
   @JsonKey(name: "belongs_to_collection")
   BelongsToCollection? get belongsToCollection;

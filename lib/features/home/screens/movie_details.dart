@@ -36,7 +36,8 @@ class MovieDetailsScreen extends ConsumerWidget {
             CachedNetworkImage(
                 fit: BoxFit.cover,
                 height: MediaQuery.of(context).size.height * .45,
-                imageUrl: AppConstants.imageBaseUrl + movieData.backdropPath),
+                imageUrl:
+                    "${AppConstants.imageBaseUrl}${movieData.backdropPath}"),
             Positioned(
               // bottom: 5,
               top: MediaQuery.of(context).size.height * 0.35,

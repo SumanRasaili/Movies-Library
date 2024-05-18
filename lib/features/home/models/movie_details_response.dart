@@ -7,7 +7,7 @@ part 'movie_details_response.g.dart';
 class MovieDetails with _$MovieDetails {
   const factory MovieDetails({
     @JsonKey(name: "adult") required bool adult,
-    @JsonKey(name: "backdrop_path") required String backdropPath,
+    @JsonKey(name: "backdrop_path") required String? backdropPath,
     @JsonKey(name: "belongs_to_collection")
     required BelongsToCollection? belongsToCollection,
     @JsonKey(name: "budget") required int? budget,

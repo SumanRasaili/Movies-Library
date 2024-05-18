@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tmdbapp/features/home/screens/now_playing.dart';
+import 'package:tmdbapp/features/home/screens/search_page.dart';
 import 'package:tmdbapp/features/home/widgets/popular_movies.dart';
 import 'package:tmdbapp/features/home/widgets/top_rated.dart';
 
@@ -27,6 +28,10 @@ class HomeScreen extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextFormField(
+                      readOnly: true,
+                      onTap: () {
+                        context.push(SearchPage.routeName);
+                      },
                       decoration: const InputDecoration(
                           suffixIcon: Icon(
                             Icons.search,

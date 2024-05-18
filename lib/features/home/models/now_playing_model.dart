@@ -7,8 +7,6 @@ part 'now_playing_model.g.dart';
 class NowPlayingModel with _$NowPlayingModel {
   const factory NowPlayingModel({
     required int page,
-     bool? isLoading,
-     bool? isPaginationLoading,
     required List<Result> results,
     @JsonKey(name: "total_pages") required int totalPages,
     @JsonKey(name: "total_results") required int totalResults,

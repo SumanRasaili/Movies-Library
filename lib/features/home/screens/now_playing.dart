@@ -38,6 +38,7 @@ class NowplayingWidget extends HookConsumerWidget {
           Column(
             children: [
               CarouselSlider.builder(
+                  carouselController: controller,
                   itemCount: nowPlayingList.length,
                   itemBuilder: (context, index, realIndex) {
                     var item = nowPlayingList[index];
@@ -61,13 +62,16 @@ class NowplayingWidget extends HookConsumerWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        "${item.originalTitle} (${item.releaseDate?.year})",
-                                        maxLines: 1,
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
+                                      Container(
+                                        child: Text(
+                                          "${item.title} (${item.releaseDate?.year})",
+                                          maxLines: 1,
+                                          style: const TextStyle(
+                                            overflow: TextOverflow.ellipsis,
+                                            color: Colors.white,
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ),
                                       const SizedBox(

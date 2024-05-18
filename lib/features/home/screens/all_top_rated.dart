@@ -50,12 +50,6 @@ class AllTopRatedMovies extends ConsumerWidget {
                 );
               },
             ),
-            SliverToBoxAdapter(
-              child: Center(
-                child: Text(
-                    "Pagination loading ${topratedMovies.isPaginationLoading}"),
-              ),
-            ),
             const SliverToBoxAdapter(
               child: SizedBox(
                 height: 10,

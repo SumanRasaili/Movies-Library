@@ -21,8 +21,6 @@ NowPlayingModel _$NowPlayingModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NowPlayingModel {
   int get page => throw _privateConstructorUsedError;
-  bool? get isLoading => throw _privateConstructorUsedError;
-  bool? get isPaginationLoading => throw _privateConstructorUsedError;
   List<Result> get results => throw _privateConstructorUsedError;
   @JsonKey(name: "total_pages")
   int get totalPages => throw _privateConstructorUsedError;
@@ -43,8 +41,6 @@ abstract class $NowPlayingModelCopyWith<$Res> {
   @useResult
   $Res call(
       {int page,
-      bool? isLoading,
-      bool? isPaginationLoading,
       List<Result> results,
       @JsonKey(name: "total_pages") int totalPages,
       @JsonKey(name: "total_results") int totalResults});
@@ -64,8 +60,6 @@ class _$NowPlayingModelCopyWithImpl<$Res, $Val extends NowPlayingModel>
   @override
   $Res call({
     Object? page = null,
-    Object? isLoading = freezed,
-    Object? isPaginationLoading = freezed,
     Object? results = null,
     Object? totalPages = null,
     Object? totalResults = null,
@@ -75,14 +69,6 @@ class _$NowPlayingModelCopyWithImpl<$Res, $Val extends NowPlayingModel>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-      isLoading: freezed == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isPaginationLoading: freezed == isPaginationLoading
-          ? _value.isPaginationLoading
-          : isPaginationLoading // ignore: cast_nullable_to_non_nullable
-              as bool?,
       results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
@@ -109,8 +95,6 @@ abstract class _$$NowPlayingModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {int page,
-      bool? isLoading,
-      bool? isPaginationLoading,
       List<Result> results,
       @JsonKey(name: "total_pages") int totalPages,
       @JsonKey(name: "total_results") int totalResults});
@@ -128,8 +112,6 @@ class __$$NowPlayingModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? page = null,
-    Object? isLoading = freezed,
-    Object? isPaginationLoading = freezed,
     Object? results = null,
     Object? totalPages = null,
     Object? totalResults = null,
@@ -139,14 +121,6 @@ class __$$NowPlayingModelImplCopyWithImpl<$Res>
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-      isLoading: freezed == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isPaginationLoading: freezed == isPaginationLoading
-          ? _value.isPaginationLoading
-          : isPaginationLoading // ignore: cast_nullable_to_non_nullable
-              as bool?,
       results: null == results
           ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
@@ -168,8 +142,6 @@ class __$$NowPlayingModelImplCopyWithImpl<$Res>
 class _$NowPlayingModelImpl implements _NowPlayingModel {
   const _$NowPlayingModelImpl(
       {required this.page,
-      this.isLoading,
-      this.isPaginationLoading,
       required final List<Result> results,
       @JsonKey(name: "total_pages") required this.totalPages,
       @JsonKey(name: "total_results") required this.totalResults})
@@ -180,10 +152,6 @@ class _$NowPlayingModelImpl implements _NowPlayingModel {
 
   @override
   final int page;
-  @override
-  final bool? isLoading;
-  @override
-  final bool? isPaginationLoading;
   final List<Result> _results;
   @override
   List<Result> get results {
@@ -201,7 +169,7 @@ class _$NowPlayingModelImpl implements _NowPlayingModel {
 
   @override
   String toString() {
-    return 'NowPlayingModel(page: $page, isLoading: $isLoading, isPaginationLoading: $isPaginationLoading, results: $results, totalPages: $totalPages, totalResults: $totalResults)';
+    return 'NowPlayingModel(page: $page, results: $results, totalPages: $totalPages, totalResults: $totalResults)';
   }
 
   @override
@@ -210,10 +178,6 @@ class _$NowPlayingModelImpl implements _NowPlayingModel {
         (other.runtimeType == runtimeType &&
             other is _$NowPlayingModelImpl &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.isPaginationLoading, isPaginationLoading) ||
-                other.isPaginationLoading == isPaginationLoading) &&
             const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.totalPages, totalPages) ||
                 other.totalPages == totalPages) &&
@@ -223,14 +187,8 @@ class _$NowPlayingModelImpl implements _NowPlayingModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      page,
-      isLoading,
-      isPaginationLoading,
-      const DeepCollectionEquality().hash(_results),
-      totalPages,
-      totalResults);
+  int get hashCode => Object.hash(runtimeType, page,
+      const DeepCollectionEquality().hash(_results), totalPages, totalResults);
 
   @JsonKey(ignore: true)
   @override
@@ -250,8 +208,6 @@ class _$NowPlayingModelImpl implements _NowPlayingModel {
 abstract class _NowPlayingModel implements NowPlayingModel {
   const factory _NowPlayingModel(
           {required final int page,
-          final bool? isLoading,
-          final bool? isPaginationLoading,
           required final List<Result> results,
           @JsonKey(name: "total_pages") required final int totalPages,
           @JsonKey(name: "total_results") required final int totalResults}) =
@@ -262,10 +218,6 @@ abstract class _NowPlayingModel implements NowPlayingModel {
 
   @override
   int get page;
-  @override
-  bool? get isLoading;
-  @override
-  bool? get isPaginationLoading;
   @override
   List<Result> get results;
   @override

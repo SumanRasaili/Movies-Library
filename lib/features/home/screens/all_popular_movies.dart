@@ -49,9 +49,6 @@ class AllPopularMovies extends ConsumerWidget {
                 );
               },
             ),
-            SliverToBoxAdapter(
-                child: Text(
-                    "Is pagination data ${popularMovies.isPaginationLoading}")),
             if (popularMovies.isPaginationLoading) ...{
               const SliverToBoxAdapter(
                 child: Center(child: CircularProgressIndicator()),

@@ -9,7 +9,7 @@ part of 'movie_details_response.dart';
 _$MovieDetailsImpl _$$MovieDetailsImplFromJson(Map<String, dynamic> json) =>
     _$MovieDetailsImpl(
       adult: json['adult'] as bool,
-      backdropPath: json['backdrop_path'] as String,
+      backdropPath: json['backdrop_path'] as String?,
       belongsToCollection: json['belongs_to_collection'] == null
           ? null
           : BelongsToCollection.fromJson(
