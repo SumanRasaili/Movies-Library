@@ -43,7 +43,7 @@ class SearchPage extends HookConsumerWidget {
                 ref.read(searchProvider.notifier).getData(searchQuery: value);
               },
               decoration: InputDecoration(
-                  suffixIcon: isSearching.value
+                  suffixIcon: textEditingController.text.isEmpty
                       ? const Icon(
                           Icons.search,
                           size: 25,
