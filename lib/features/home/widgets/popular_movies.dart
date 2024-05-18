@@ -12,7 +12,6 @@ class PopularMovies extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final popularList = ref.watch(popularMoviesProvider);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
